@@ -1,0 +1,116 @@
+{
+  "productos": {
+    "1":{
+      "id": "1",
+      "name": "Café americano",
+      "price": "5",
+      "type": "Desayuno",
+      "img":""
+    },
+    "2":{
+      "id": "2",
+      "name": "Café con leche",
+      "price": "7",
+      "type": "Desayuno",
+      "img":""
+    },
+    "3":{
+      "id": "3",
+      "name": "Sandwich de jamón y queso",
+      "price": "10",
+      "type": "Desayuno",
+      "img":""
+    },
+    "4":{
+      "id": "4",
+      "name": "Jugo de frutas natural",
+      "price": "7",
+      "type": "Desayuno",
+      "img":""
+    },
+    "5":{
+      "id": "5",
+      "name": "Hamburguesa simple",
+      "price": "10",
+      "type": "Menú",
+      "subtype": "Hamburguesas",
+      "burguer-type": ["Res", "Pollo", "Vegetariana"],
+      "extra": ["Queso", "Huevo"],
+      "img":""
+    },
+    "6":{
+      "id": "6",
+      "name": "Hamburguesa doble",
+      "price": "10",
+      "type": "Menú",
+      "subtype": "Hamburguesas",
+      "burguer-type": ["Res", "Pollo", "Vegetariana"],
+      "extra": ["Queso", "Huevo"],
+      "img":""
+    },
+    "7":{
+      "id": "7",
+      "name": "Papas fritas",
+      "price": "5",
+      "type": "Menú",
+      "subtype": "Acompañamientos",
+      "img":""
+    },
+    "8":{
+      "id": "8",
+      "name": "Aros de cebolla",
+      "price": "5",
+      "type": "Menú",
+      "subtype": "Acompañamientos",
+      "img":""
+    },
+    "9":{
+      "id": "9",
+      "name": "Agua 500ml",
+      "price": "5",
+      "type": "Menú",
+      "subtype": "Bebidas",
+      "img":""
+    },
+    "10":{
+      "id": "10",
+      "name": "Agua 750ml",
+      "price": "7",
+      "type": "Menú",
+      "subtype": "Bebidas",
+      "img":""
+    },
+    "11":{
+      "id": "11",
+      "name": "Inca Kola 500ml",
+      "price": "7",
+      "type": "Menú",
+      "subtype": "Bebidas",
+      "img":""
+    },
+    "12":{
+      "id": "12",
+      "name": "Inca Kola 750ml",
+      "price": "10",
+      "type": "Menú",
+      "subtype": "Bebidas",
+      "img":""
+    },
+    "13":{
+      "id": "13",
+      "name": "Coca Cola 500ml",
+      "price": "7",
+      "type": "Menú",
+      "subtype": "Bebidas",
+      "img":""
+    },
+    "14":{
+      "id": "14",
+      "name": "Coca Cola 750ml",
+      "price": "10",
+      "type": "Menú",
+      "subtype": "Bebidas",
+      "img":""
+    }
+  }
+}
