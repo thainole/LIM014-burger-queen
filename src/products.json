@@ -30,82 +30,116 @@
     },
     "5":{
       "id": "5",
-      "name": "Hamburguesa simple",
+      "name": "Hamburguesa simple de res",
       "price": "10",
       "type": "Menú",
       "subtype": "Hamburguesas",
-      "burguer-type": ["Res", "Pollo", "Vegetariana"],
       "extra": ["Queso", "Huevo"],
       "img":""
     },
     "6":{
       "id": "6",
-      "name": "Hamburguesa doble",
+      "name": "Hamburguesa doble de res",
       "price": "10",
       "type": "Menú",
       "subtype": "Hamburguesas",
-      "burguer-type": ["Res", "Pollo", "Vegetariana"],
       "extra": ["Queso", "Huevo"],
       "img":""
     },
     "7":{
       "id": "7",
+      "name": "Hamburguesa simple de pollo",
+      "price": "10",
+      "type": "Menú",
+      "subtype": "Hamburguesas",
+      "extra": ["Queso", "Huevo"],
+      "img":""
+    },
+    "8":{
+      "id": "8",
+      "name": "Hamburguesa doble de pollo",
+      "price": "10",
+      "type": "Menú",
+      "subtype": "Hamburguesas",
+      "extra": ["Queso", "Huevo"],
+      "img":""
+    },
+    "9":{
+      "id": "9",
+      "name": "Hamburguesa simple vegetariana",
+      "price": "10",
+      "type": "Menú",
+      "subtype": "Hamburguesas",
+      "extra": ["Queso", "Huevo"],
+      "img":""
+    },
+    "10":{
+      "id": "10",
+      "name": "Hamburguesa doble vegetariana",
+      "price": "10",
+      "type": "Menú",
+      "subtype": "Hamburguesas",
+      "extra": ["Queso", "Huevo"],
+      "img":""
+    },
+    "11":{
+      "id": "11",
       "name": "Papas fritas",
       "price": "5",
       "type": "Menú",
       "subtype": "Acompañamientos",
       "img":""
     },
-    "8":{
-      "id": "8",
+    "12":{
+      "id": "12",
       "name": "Aros de cebolla",
       "price": "5",
       "type": "Menú",
       "subtype": "Acompañamientos",
       "img":""
     },
-    "9":{
-      "id": "9",
+    "13":{
+      "id": "13",
       "name": "Agua 500ml",
       "price": "5",
       "type": "Menú",
       "subtype": "Bebidas",
       "img":""
     },
-    "10":{
-      "id": "10",
+    "14":{
+      "id": "14",
       "name": "Agua 750ml",
       "price": "7",
       "type": "Menú",
       "subtype": "Bebidas",
       "img":""
     },
-    "11":{
-      "id": "11",
+    "15":{
+      "id": "15",
       "name": "Inca Kola 500ml",
       "price": "7",
       "type": "Menú",
       "subtype": "Bebidas",
       "img":""
     },
-    "12":{
-      "id": "12",
+    "16":{
+      "id": "16",
       "name": "Inca Kola 750ml",
       "price": "10",
       "type": "Menú",
       "subtype": "Bebidas",
       "img":""
     },
-    "13":{
-      "id": "13",
+    "17":{
+      "id": "17",
       "name": "Coca Cola 500ml",
       "price": "7",
       "type": "Menú",
       "subtype": "Bebidas",
       "img":""
     },
-    "14":{
-      "id": "14",
+    "18":{
+      "id": "18",
       "name": "Coca Cola 750ml",
       "price": "10",
       "type": "Menú",
