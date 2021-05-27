@@ -1,0 +1,22 @@
+/* PALETA DE COLORES */
+/* MIXIN DE DISPLAYS */
+@media screen and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+  .home {
+    /*     &__article{
+      @include display(row, center, space-between);
+    } */
+  }
+  .home__title {
+    color: red;
+  }
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #14ff91;
+  font-family: "Lato", sans-serif;
+}/*# sourceMappingURL=style.css.map */
