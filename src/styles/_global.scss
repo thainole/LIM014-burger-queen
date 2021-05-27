@@ -1,0 +1,15 @@
+/* PALETA DE COLORES */
+$lightRed: #f04e51;
+$black: #000000;
+$grey: #cccccc;
+$darkGrey: #666666;
+$white: #ffff;
+
+/* MIXIN DE DISPLAYS */
+@mixin displayFlex ($direction, $align, $justify) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+

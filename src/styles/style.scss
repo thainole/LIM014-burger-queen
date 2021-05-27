@@ -1,0 +1,19 @@
+@import "./global";
+@import "./home";
+// @import "/src/styles/NavBar";
+// @import "/src/styles/order";
+// @import "/src/styles/orderHistory";
+// @import "/src/styles/orderStatus";
+// @import "/src/styles/chefOrder";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  background-color: #14ff91;
+  font-family: 'Lato', sans-serif;
+}
+
+

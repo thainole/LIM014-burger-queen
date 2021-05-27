@@ -1,15 +1,16 @@
 import React from "react";
+import './styles/css/style.css';
 import {
   BrowserRouter as Router,
   Switch,
   Route,
 } from "react-router-dom";
-import './App.css';
-import { Cocina } from "./components/Cocina/Cocina";
-import { Inicio } from "./components/Inicio";
-import { Historial } from "./components/Mesero/Historial";
-import { Pedidos } from "./components/Mesero/Pedidos";
-import { Estado } from "./components/Mesero/Estado";
+
+import { Cocina } from "./components/Chef/ChefOrder";
+import { Inicio } from "./components/Home";
+import { Historial } from "./components/Server/OrderHistory";
+import { Pedidos } from "./components/Server/Order";
+import { Estado } from "./components/Server/OrderStatus";
 
 
 export const App = () => {
