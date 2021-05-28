@@ -1,11 +1,11 @@
 import React from 'react'
 import { NavBar } from './NavBar'
 
-export const Historial = () => {
+export const OrderHistory = () => {
   return (
-    <div>
+    <section>
       <NavBar />
       <p>Hola soy el historial de tus pedidos ;)</p>
-    </div>
+    </section>
   )
 }
