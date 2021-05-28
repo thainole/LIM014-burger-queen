@@ -6,22 +6,22 @@ import {
   Route,
 } from "react-router-dom";
 
-import { Cocina } from "./components/Chef/ChefOrder";
-import { Inicio } from "./components/Home";
-import { Historial } from "./components/Server/OrderHistory";
-import { Pedidos } from "./components/Server/Order";
-import { Estado } from "./components/Server/OrderStatus";
+import { Home } from "./components/Home";
+import { Order } from "./components/Server/Order";
+import { OrderStatus } from "./components/Server/OrderStatus";
+import { OrderHistory } from "./components/Server/OrderHistory";
+import { Chef } from "./components/Chef/ChefOrder";
 
 
 export const App = () => {
   return (
     <Router>
       <Switch>
-        <Route exact path="/" component={Inicio} />
-        <Route exact path="/mesero/hacer-pedidos" component={Pedidos} />
-        <Route exact path="/mesero/estado-pedidos" component={Estado} />
-        <Route exact path="/mesero/historial-pedidos" component={Historial} />
-        <Route exact path="/cocina" component={Cocina} />
+        <Route exact path="/" component={Home} />
+        <Route exact path="/mesero/hacer-pedidos" component={Order} />
+        <Route exact path="/mesero/estado-pedidos" component={OrderStatus} />
+        <Route exact path="/mesero/historial-pedidos" component={OrderHistory} />
+        <Route exact path="/cocina" component={Chef} />
       </Switch>
     </Router>
   );

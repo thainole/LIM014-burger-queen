@@ -1,13 +1,33 @@
-@import "/global";
+@import "./global";
 
-@media screen and (min-width: 768px) and (max-width: 1024px) /* and (orientation: landscape) */ {
+@media screen and (min-width: 768px)/*  and (max-width: 1024px) */ /* and (orientation: landscape) */ {
   .home{
-    @include displayFlex(row, center, space-between);
-    &__title{
-      color:red;
+    padding: 1rem;
+    text-align: center;
+    @include displayFlex(column, space-around, center/* , space-around */);
+    h1 {
+      line-height: 3rem;
+      font-size: $large;
     }
-    &__article{
-      color:rgb(139, 19, 119);
+    article{
+      @include displayFlex(row, space-around, center/* , space-around */);
+      li {
+        @include buttonStyle(2px, $golden, $golden, 0.5rem, 0.4rem);
+        margin-bottom: 1.5rem;
+        margin-top: 1.5rem;
+        width: 10rem;
+        a {
+          font-size: $medium;
+          color: white;
+        }
+      }
+      figure {
+        img {
+          margin-right: 6rem;
+          width: 13rem;
+        }
+      }
     }
+    
   }
 }

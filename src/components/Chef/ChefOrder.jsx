@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from "react-router-dom";
 
-export const Cocina = () => {
+export const Chef = () => {
   return (
     <div>
       <Link to="/">Salir</Link>

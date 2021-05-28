@@ -1,6 +1,6 @@
 @import "./global";
 @import "./home";
-// @import "/src/styles/NavBar";
+@import "./navBar";
 // @import "/src/styles/order";
 // @import "/src/styles/orderHistory";
 // @import "/src/styles/orderStatus";
@@ -12,8 +12,22 @@
   box-sizing: border-box;
 }
 body{
-  background-color: #14ff91;
+  background-color: #fff0cc;
   font-family: 'Lato', sans-serif;
+}
+
+section {
+  height: 100vh;
+  width: 100vw;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: $black;
 }
 
 
