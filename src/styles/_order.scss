@@ -1,8 +1,9 @@
+@import "./global";
 @media screen and (min-width: 768px)/*  and (max-width: 1024px) */ /* and (orientation: landscape) */{
   .order {
     .orderContainer {
-      display: flex;
-      flex-direction: row;
+      padding: 1rem;
+      @include displayFlex (row, space-around, center/* , $alignContent */)
     }
   }
 }

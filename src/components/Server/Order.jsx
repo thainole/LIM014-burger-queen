@@ -1,6 +1,7 @@
 import React from 'react'
 import { NavBar } from './NavBar'
 import { Products } from './Products'
+import { OrderList } from './OrderList'
 
 export const Order = () => {
   return (
@@ -8,7 +9,7 @@ export const Order = () => {
       <NavBar />
       <article className="orderContainer">
         <Products />
-        <p>hola soy la orden</p>
+        <OrderList />
       </article>
     </section>
   )
