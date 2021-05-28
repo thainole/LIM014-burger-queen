@@ -2,8 +2,12 @@ import React from 'react'
 
 export const Products = () => {
   return (
-    <div>
-      <p>hola soy productos</p>
-    </div>
+    <>
+      <nav>
+{/*         <li><Link></Link></li> */}
+        <li></li>
+        <li></li>
+      </nav>
+    </>
   )
 }
