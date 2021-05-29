@@ -1,0 +1,148 @@
+[
+  {
+    "id": "1",
+    "name": "Café americano",
+    "price": "5",
+    "type": "Desayuno",
+    "img":"https://i.pinimg.com/564x/f9/93/b4/f993b42301fe2f0972357a32ffe84c57.jpg"
+  },
+  {
+    "id": "2",
+    "name": "Café con leche",
+    "price": "7",
+    "type": "Desayuno",
+    "img":"https://i.pinimg.com/564x/92/c6/28/92c628ef8827ff77ee25df2b142d66e5.jpg"
+  },
+  {
+    "id": "3",
+    "name": "Sandwich de jamón y queso",
+    "price": "10",
+    "type": "Desayuno",
+    "img":"https://i.pinimg.com/564x/f6/aa/b2/f6aab28aac516a7b31ea0bb08dc4cfb4.jpg"
+  },
+  {
+    "id": "4",
+    "name": "Jugo de frutas natural",
+    "price": "7",
+    "type": "Desayuno",
+    "img":"https://i.pinimg.com/564x/d6/c7/3d/d6c73dfc60823bcbbb766836e13f3f50.jpg"
+  },
+  {
+    "id": "5",
+    "name": "Hamburguesa simple de res",
+    "price": "10",
+    "type": "Menú",
+    "subtype": "Hamburguesas",
+    "extra": ["Queso", "Huevo"],
+    "img":"https://i.pinimg.com/564x/6b/6a/06/6b6a06f2e77150adc71aa8e717e6e16d.jpg"
+  },
+  {
+    "id": "6",
+    "name": "Hamburguesa doble de res",
+    "price": "10",
+    "type": "Menú",
+    "subtype": "Hamburguesas",
+    "extra": ["Queso", "Huevo"],
+    "img":"https://i.pinimg.com/564x/6b/6a/06/6b6a06f2e77150adc71aa8e717e6e16d.jpg"
+  },
+  {
+    "id": "7",
+    "name": "Hamburguesa simple de pollo",
+    "price": "10",
+    "type": "Menú",
+    "subtype": "Hamburguesas",
+    "extra": ["Queso", "Huevo"],
+    "img":"https://i.pinimg.com/564x/14/72/89/147289c6bcedd515ccf17136166161fa.jpg"
+  },
+  {
+    "id": "8",
+    "name": "Hamburguesa doble de pollo",
+    "price": "10",
+    "type": "Menú",
+    "subtype": "Hamburguesas",
+    "extra": ["Queso", "Huevo"],
+    "img":"https://i.pinimg.com/564x/14/72/89/147289c6bcedd515ccf17136166161fa.jpg"
+  },
+  {
+    "id": "9",
+    "name": "Hamburguesa simple vegetariana",
+    "price": "10",
+    "type": "Menú",
+    "subtype": "Hamburguesas",
+    "extra": ["Queso", "Huevo"],
+    "img":"https://i.pinimg.com/564x/76/0c/88/760c8894ae785cc452f717e03697d628.jpg"
+  },
+  {
+    "id": "10",
+    "name": "Hamburguesa doble vegetariana",
+    "price": "10",
+    "type": "Menú",
+    "subtype": "Hamburguesas",
+    "extra": ["Queso", "Huevo"],
+    "img":"https://i.pinimg.com/564x/76/0c/88/760c8894ae785cc452f717e03697d628.jpg"
+  },
+  {
+    "id": "11",
+    "name": "Papas fritas",
+    "price": "5",
+    "type": "Menú",
+    "subtype": "Acompañamientos",
+    "img":"https://i.pinimg.com/564x/d3/47/87/d34787d586c5caadf1c3dd98a8ee4faf.jpg"
+  },
+  {
+    "id": "12",
+    "name": "Aros de cebolla",
+    "price": "5",
+    "type": "Menú",
+    "subtype": "Acompañamientos",
+    "img":"https://i.pinimg.com/564x/d4/32/38/d43238bd5202104ce71c7b8782d9f7a0.jpg"
+  },
+  {
+    "id": "13",
+    "name": "Agua 500ml",
+    "price": "5",
+    "type": "Menú",
+    "subtype": "Bebidas",
+    "img":"https://i.pinimg.com/564x/c0/23/68/c0236821653530cb2f152af290c158fb.jpg"
+  },
+  {
+    "id": "14",
+    "name": "Agua 750ml",
+    "price": "7",
+    "type": "Menú",
+    "subtype": "Bebidas",
+    "img":"https://i.pinimg.com/564x/c0/23/68/c0236821653530cb2f152af290c158fb.jpg"
+  },
+  {
+    "id": "15",
+    "name": "Inca Kola 500ml",
+    "price": "7",
+    "type": "Menú",
+    "subtype": "Bebidas",
+    "img":"https://i.pinimg.com/564x/75/4d/97/754d97f851ea61deeee3310794785391.jpg"
+  },
+  {
+    "id": "16",
+    "name": "Inca Kola 750ml",
+    "price": "10",
+    "type": "Menú",
+    "subtype": "Bebidas",
+    "img":"https://i.pinimg.com/564x/75/4d/97/754d97f851ea61deeee3310794785391.jpg"
+  },
+  {
+    "id": "17",
+    "name": "Coca Cola 500ml",
+    "price": "7",
+    "type": "Menú",
+    "subtype": "Bebidas",
+    "img":"https://i.pinimg.com/564x/11/fe/9a/11fe9a0abf5af770b36dc757ce96aed5.jpg"
+  },
+  {
+    "id": "18",
+    "name": "Coca Cola 750ml",
+    "price": "10",
+    "type": "Menú",
+    "subtype": "Bebidas",
+    "img":"https://i.pinimg.com/564x/11/fe/9a/11fe9a0abf5af770b36dc757ce96aed5.jpg"
+  }
+]

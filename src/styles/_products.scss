@@ -1,3 +1,35 @@
-@media screen and (min-width: 768px)/*  and (max-width: 1024px) */ /* and (orientation: landscape) */{
+@import "./global";
 
+@media screen and (min-width: 768px)/*  and (max-width: 1024px) */ /* and (orientation: landscape) */{
+  .productsList {
+    width: 65vw;
+    @include displayFlex(column, space-around, flex-start);
+    nav {
+      font-size: $small;
+      div {
+        @include displayFlex(row, center, center);
+        li {
+          @include buttonStyle(1px, $golden, $white, 0.5rem, 0.3rem);
+          margin-left: 1rem;
+        }
+      }
+    }
+    .cards{
+      @include displayFlex(row, space-around, center);
+      flex-wrap: wrap;
+      font-size: $small;
+      div {
+        text-align: center;
+        @include buttonStyle(1px, $golden, $white, 0.5rem, 0.4rem);
+        /* margin-inline: 0.7rem; */
+        margin: 0.5rem 0.7rem;
+        width: 8.5rem;
+        height: 10rem;
+        img {
+          border-radius: 0.3rem;
+          width: 6rem;
+        }
+      }
+    }
+  }
 }
