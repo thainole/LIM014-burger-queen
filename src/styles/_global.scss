@@ -1,4 +1,3 @@
-/* PALETA DE COLORES */
 $lightRed: #f04e51;
 $golden: #997400;
 $black: #000000;
@@ -6,19 +5,16 @@ $grey: #cccccc;
 $darkGrey: #666666;
 $white: #ffff;
 
-/* TAMAÑO DE LETRAS */
 $xsmall: 0.5rem;
 $small: 0.8em;
 $medium: 1.4rem;
 $large: 2.2rem;
 
-/* MIXIN DE DISPLAYS */
 @mixin displayFlex ($direction, $justify, $alignItems/* , $alignContent */) {
   display: flex;
   flex-direction: $direction;
   justify-content: $justify;
   align-items: $alignItems;
- /*  align-content: $alignContent; */
 }
 
 @mixin buttonStyle ($borderSize, $borderColor, $buttonColor, $borderRadius, $buttonPadding) {
