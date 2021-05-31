@@ -1,3 +1,68 @@
-@media screen and (min-width: 768px)/*  and (max-width: 1024px) */ /* and (orientation: landscape) */{
+@import "./global";
 
+@media screen and (min-width: 768px)/*  and (max-width: 1024px) */ /* and (orientation: landscape) */{
+  .orderList {
+    width: 35vw;
+    padding: 0 0.5rem;
+    h2{
+      font-size: $medium;
+      margin-bottom: 0.8rem;
+    }
+    .customerInfo{
+      border-bottom: dotted 2px $golden;
+      padding-bottom: 1rem;
+      p, input {
+        display: inline-flex;
+        margin-bottom: 0.3rem;
+        font-size: $small;
+        
+      }
+      p {
+        margin-right: 0.2rem;
+        width:25%;
+      }
+      input, select {
+        width: 70%;
+        height: 1.2rem;
+        border-radius: 0.2rem;
+        border: 1px solid $golden;
+        font-family: 'Lato', sans-serif;
+        outline-style: none;
+      }
+      select{
+        font-size: $small;
+        margin-left: 0.2rem;
+      }
+    }
+  }
+
+  .orderDetails {
+    margin-top: 0.4rem;
+    h4 {
+      text-decoration: underline;
+    }
+    .titles, .sumary{
+      @include displayFlex(row, space-between, flex-start);
+      font-size: $small;
+      margin: 0.5rem 0;
+    } 
+    .prodQty {
+      width: 80%;
+      p {
+        margin-bottom: 0.3rem;
+      }
+      div {
+        width: 50%;
+        @include displayFlex(row, space-around, center);
+        button {
+          width: 1.5rem;
+          font-size: 1rem;
+          img{
+            width: 0.9rem;
+          }
+        }
+      }
+      
+    }
+  }
 }
