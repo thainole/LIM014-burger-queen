@@ -5,9 +5,9 @@ $grey: #cccccc;
 $darkGrey: #666666;
 $white: #ffff;
 
-$xsmall: 0.5rem;
-$small: 0.8em;
-$medium: 1.4rem;
+$xsmall: 0.8rem;
+$small: 0.9rem;
+$medium: 1.3rem;
 $large: 2.2rem;
 
 @mixin displayFlex ($direction, $justify, $alignItems/* , $alignContent */) {
