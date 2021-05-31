@@ -12,6 +12,10 @@
       li {
         @include buttonStyle(1px, $golden, $white, 0.5rem, 0.3rem);
         margin-left: 1rem;
+        /* &:hover {
+          background-color: $golden;
+          color: $white;
+        } */
       }
     }
     img {

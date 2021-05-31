@@ -3,7 +3,7 @@
   .order {
     .orderContainer {
       padding: 1rem;
-      @include displayFlex (row, space-around, center/* , $alignContent */)
+      @include displayFlex (row, space-between, flex-start)
     }
   }
 }

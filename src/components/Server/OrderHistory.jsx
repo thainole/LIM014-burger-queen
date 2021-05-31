@@ -5,7 +5,7 @@ export const OrderHistory = () => {
   return (
     <section>
       <NavBar />
-      <p>Hola soy el historial de tus pedidos ;)</p>
+      <p>Hola soy el historial de tus pedidos ;</p>
     </section>
   )
 }

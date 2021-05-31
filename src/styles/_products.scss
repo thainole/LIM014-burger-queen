@@ -1,3 +1,48 @@
-@media screen and (min-width: 768px)/*  and (max-width: 1024px) */ /* and (orientation: landscape) */{
+@import "./global";
 
+@media screen and (min-width: 768px)/*  and (max-width: 1024px) */ /* and (orientation: landscape) */{
+  .productsList {
+    height: 90%;
+    width: 60vw;
+    border-right: solid 1px $golden;
+    @include displayFlex(column, flex-start, flex-start);
+    nav {
+      font-size: $xsmall;
+      div {
+        @include displayFlex(row, center, center);
+        li {
+          @include buttonStyle(1px, $golden, $white, 0.5rem, 0.3rem);
+          margin-left: 1rem;
+          &:hover {
+            background-color: $golden;
+            color: $white;
+          }
+        }
+      }
+    }
+    .cards{
+      @include displayFlex(row, flex-start, center);
+      flex-wrap: wrap;
+      font-size: $xsmall;
+      div {
+        text-align: center;
+        @include buttonStyle(1px, $golden, $white, 0.5rem, 0.4rem);
+        cursor: auto;
+        /* margin-inline: 0.7rem; */
+        margin: 0.5rem;
+        width: 8.5rem;
+        height: 12rem;
+        img {
+          border-radius: 0.3rem;
+          width: 6rem;
+        }
+        button {
+          @include buttonStyle(1px, $white, $lightRed, 0.5rem, 0.3rem);
+          margin-top: 0.2rem;
+          color: $white;
+          align-self: flex-end;
+        }
+      }
+    }
+  }
 }
