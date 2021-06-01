@@ -1,7 +1,9 @@
 import React from 'react';
 import deleteIcon from "../../img/delete.png";
 
-export const OrderList = () => {
+export const OrderList = (props) => {
+  console.log(props.choosenElements);
+
   return (
     <form className="orderList">
       <h2>Resumen del pedido</h2>

@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import dataJson from './data.json'
 
-export const Products = () => {
+export const Products = (props) => {
   const data = dataJson.products;
 
   const firstView = data.filter((elem) => elem.type === 'Desayuno');
@@ -29,7 +29,8 @@ export const Products = () => {
     }
   }
   const choosenProducts = (p) => {
-    console.log(p)
+    // console.log(p);
+    props.choosenElements(p);
   }
   return (
     <article className="productsList">
