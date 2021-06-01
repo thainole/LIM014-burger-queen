@@ -34,6 +34,12 @@
         margin-left: 0.2rem;
       }
     }
+    .submitButton{
+      @include buttonStyle(1px, $lightRed, $lightRed, 0.5rem, 0.4rem);
+      color: $white;
+      margin: 2rem 28%;
+      align-self: flex-end;
+    }
   }
 
   .orderDetails {
@@ -41,28 +47,33 @@
     h4 {
       text-decoration: underline;
     }
-    .titles, .sumary{
+    .titles{
       @include displayFlex(row, space-between, flex-start);
       font-size: $small;
       margin: 0.5rem 0;
     }
     .prodQty {
-      width: 80%;
-      p {
-        margin-bottom: 0.3rem;
-      }
-      div {
-        width: 50%;
-        @include displayFlex(row, space-around, center);
-        button {
-          width: 1.5rem;
-          font-size: 1rem;
-          img{
-            width: 0.9rem;
+      @include displayFlex(row, space-between, flex-start);
+      margin-bottom: 0.8rem;
+      font-size: $xsmall;
+      .prod{
+        @include displayFlex(column, flex-start, flex-start);
+        width: 80%;
+        div {
+          width: 50%;
+          @include displayFlex(row, space-around, center);
+          button {
+            width: 1.5rem;
+            font-size: 1rem;
+            img{
+              width: 0.9rem;
+            }
           }
         }
       }
-
+      p {
+        margin-bottom: 0.3rem;
+      }
     }
   }
 }

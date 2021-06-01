@@ -2,7 +2,6 @@
 
 @media screen and (min-width: 768px)/*  and (max-width: 1024px) */ /* and (orientation: landscape) */{
   .productsList {
-    height: 90%;
     width: 60vw;
     border-right: solid 1px $golden;
     @include displayFlex(column, flex-start, flex-start);

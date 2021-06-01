@@ -5,6 +5,7 @@
     padding: 0.6rem 0.6rem 0 0.6rem;
     border-bottom: solid 1px $golden;
     font-size: $small;
+    /* position: fixed; */
     @include displayFlex(row, space-between, flex-end/* , space-around */);
     ul {
       @include displayFlex(row, space-around, center/* , space-around */);

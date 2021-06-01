@@ -1,8 +1,8 @@
 import React from 'react';
 import deleteIcon from "../../img/delete.png";
 
-export const OrderList = (props) => {
-  console.log(props.choosenElements);
+export const OrderList = ({sentProducts}) => {//esto tmb es props.sentProducts
+  console.log(sentProducts);
 
   return (
     <form className="orderList">
@@ -24,32 +24,29 @@ export const OrderList = (props) => {
           <h4>Productos</h4>
           <h4>Precio</h4>
         </div>
+
         <aside className="sumary">
-          <div className="prodQty">
-            <p>Hamburguesa doble vegetariana con queso y huevo</p>
-            <div>
-              <button>-</button>
-              <p>1</p>
-              <button>+</button>
-              <button><img src={deleteIcon} alt="" /></button>
-            </div>
-          </div>
-          <p>S/. 17</p>
-        </aside>
-        <aside className="sumary">
-          <div className="prodQty">
-            <p>Hamburguesa doble vegetariana con queso y huevo</p>
-            <div>
-              <button>-</button>
-              <p>1</p>
-              <button>+</button>
-              <button><img src={deleteIcon} alt="" /></button>
-            </div>
-          </div>
-          <p>S/. 17</p>
+          {
+            sentProducts.map(obj => (
+              <>
+                <section className="prodQty" key={obj.id}>
+                  <div className="prod">
+                    <p>{obj.name}</p>
+                    <div>
+                      <button>-</button>
+                      <p>1</p>
+                      <button>+</button>
+                      <button><img src={deleteIcon} alt="" /></button>
+                    </div>
+                  </div>
+                  <p>S/. {obj.price}</p>
+                </section>
+              </>
+            ))
+          }
         </aside>
       </section>
-      <button>Enviar a cocina</button>
+      <button className="submitButton">Enviar a cocina</button>
     </form>
   );
 }
