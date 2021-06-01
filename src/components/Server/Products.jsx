@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import dataJson from './data.json'
 
-export const Products = () => {
+export const Products = (props) => {
   const data = dataJson.products;
 
   const firstView = data.filter((elem) => elem.type === 'Desayuno');
@@ -25,8 +25,12 @@ export const Products = () => {
       case 'Bebidas':
         const drinks = data.filter((elem) => elem.type === option);
         setProducts(drinks);
-        break; 
+        break;
     }
+  }
+  const choosenProducts = (p) => {
+    // console.log(p);
+    props.choosenElements(p);
   }
   return (
     <article className="productsList">
@@ -43,12 +47,12 @@ export const Products = () => {
       <article>
       <ul className="cards">
         {products.map(p => (
-          <div>
+          <div key={p.id}>
             <img src={p.img} alt="" />
-            <li key={p.id}>{p.name}</li>
+            <li>{p.name}</li>
             <p>S/. {p.price}</p>
-            <button>Agregar</button>
-          </div>  
+            <button onClick={()=>choosenProducts(p)}>Agregar</button>
+          </div>
         ))}
         </ul>
       </article>

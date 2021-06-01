@@ -15,7 +15,7 @@
         display: inline-flex;
         margin-bottom: 0.3rem;
         font-size: $small;
-        
+
       }
       p {
         margin-right: 0.2rem;
@@ -45,7 +45,7 @@
       @include displayFlex(row, space-between, flex-start);
       font-size: $small;
       margin: 0.5rem 0;
-    } 
+    }
     .prodQty {
       width: 80%;
       p {
@@ -62,7 +62,7 @@
           }
         }
       }
-      
+
     }
   }
 }

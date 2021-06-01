@@ -1,9 +1,11 @@
 import React from 'react';
 import deleteIcon from "../../img/delete.png";
 
-export const OrderList = () => {
+export const OrderList = (props) => {
+  console.log(props.choosenElements);
+
   return (
-    <article className="orderList">
+    <form className="orderList">
       <h2>Resumen del pedido</h2>
       <section className="customerInfo">
         <p>Cliente : </p> <input type="text" />
@@ -47,6 +49,7 @@ export const OrderList = () => {
           <p>S/. 17</p>
         </aside>
       </section>
-    </article>
+      <button>Enviar a cocina</button>
+    </form>
   );
 }
