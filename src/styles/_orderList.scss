@@ -15,11 +15,6 @@
         display: inline-flex;
         margin-bottom: 0.3rem;
         font-size: $small;
-<<<<<<< HEAD
-
-=======
-        
->>>>>>> 9a1d8b58113512c22187678c4b8865babd03037a
       }
       p {
         margin-right: 0.2rem;
@@ -38,15 +33,12 @@
         margin-left: 0.2rem;
       }
     }
-<<<<<<< HEAD
     .submitButton{
       @include buttonStyle(1px, $lightRed, $lightRed, 0.5rem, 0.4rem);
       color: $white;
       margin: 2rem 28%;
       align-self: flex-end;
     }
-=======
->>>>>>> 9a1d8b58113512c22187678c4b8865babd03037a
   }
 
   .orderDetails {
@@ -54,7 +46,6 @@
     h4 {
       text-decoration: underline;
     }
-<<<<<<< HEAD
     .titles{
       @include displayFlex(row, space-between, flex-start);
       font-size: $small;
@@ -82,30 +73,6 @@
       p {
         margin-bottom: 0.3rem;
       }
-=======
-    .titles, .sumary{
-      @include displayFlex(row, space-between, flex-start);
-      font-size: $small;
-      margin: 0.5rem 0;
-    } 
-    .prodQty {
-      width: 80%;
-      p {
-        margin-bottom: 0.3rem;
-      }
-      div {
-        width: 50%;
-        @include displayFlex(row, space-around, center);
-        button {
-          width: 1.5rem;
-          font-size: 1rem;
-          img{
-            width: 0.9rem;
-          }
-        }
-      }
-      
->>>>>>> 9a1d8b58113512c22187678c4b8865babd03037a
     }
   }
 }
