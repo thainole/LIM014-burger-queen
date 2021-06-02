@@ -1,11 +1,29 @@
-import React from 'react';
+import React, {useState} from 'react';
 import deleteIcon from "../../img/delete.png";
 
 export const OrderList = ({sentProducts}) => {//esto tmb es props.sentProducts
   console.log(sentProducts);
 
+  const [qty, setQty] = useState(1)
+  /* const handleRemove =(id) => {
+    const newList = sentProducts.filter((item) => item.id !== id);
+    setOrderL(newList);
+  } */
+
+  /* const sumaryData = {
+    waiter: '',
+    customer: '',
+    table: '',
+    products: [],
+    orderTime: '',
+    completeTime: '',
+    timeLength: '',
+    completed: '',
+  }
+  const [values, setValues] = useState(sumaryData); */
+
   return (
-    <form className="orderList">
+    <form onSubmit={(e) =>e.preventDefault()} className="orderList">
       <h2>Resumen del pedido</h2>
       <section className="customerInfo">
         <p>Cliente : </p> <input type="text" />
@@ -33,20 +51,22 @@ export const OrderList = ({sentProducts}) => {//esto tmb es props.sentProducts
                   <div className="prod">
                     <p>{obj.name}</p>
                     <div>
-                      <button>-</button>
-                      <p>1</p>
-                      <button>+</button>
-                      <button><img src={deleteIcon} alt="" /></button>
+                      <button onClick={() => qty > 1 ? setQty(qty-1) : setQty(qty)}>-</button>
+                      <p>{qty}</p>
+                      <button onClick={() => setQty(qty+1)}>+</button>
+                      <button><img src={deleteIcon} alt="" /* onClick={() => handleRemove(obj.id)} *//></button>
                     </div>
                   </div>
-                  <p>S/. {obj.price}</p>
+                  <p>S/. {obj.price*qty}</p>
                 </section>
               </>
             ))
+            
           }
+          <h3>Total</h3>
         </aside>
       </section>
-      <button className="submitButton">Enviar a cocina</button>
+      <button className="submitButton" /* onReset={()=>Form.reset()} */>Enviar a cocina</button>
     </form>
   );
 }
