@@ -47,7 +47,7 @@ export const OrderList = ({sentProducts, handleRemove}) => {//esto tmb es props.
                     <p>{obj.name}</p>
                     <div>
                       <button onClick={() => handleQty(obj.id, '-')}>-</button>
-                      <p idQty={obj.id}>{qty}</p>
+                      <p>{qty}</p>
                       <button onClick={() => handleQty(obj.id, '+')}>+</button>
                       <button><img src={deleteIcon} onClick={()=>handleRemove(obj.id)} alt="" /></button>
                     </div>
