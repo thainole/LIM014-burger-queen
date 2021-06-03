@@ -1,3 +1,17 @@
-@media screen and (min-width: 768px)/*  and (max-width: 1024px) */ /* and (orientation: landscape) */{
+@import "./global";
 
+@media screen and (min-width: 768px)/*  and (max-width: 1024px) */ /* and (orientation: landscape) */{
+  .statusCard{
+    font-size: $xsmall;
+    .cards{
+      @include buttonStyle(1px, $mainColor, $white, 0.5rem, 0.4rem);
+      @include displayFlex(column, flex-start, flex-start);
+      margin: 0.5rem;
+      width: 10rem;
+      h5, button {
+        align-self: center;
+      }
+    }
+  }
+  
 }

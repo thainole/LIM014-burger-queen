@@ -1,30 +1,25 @@
 import React, {useState} from 'react';
 import deleteIcon from "../../img/delete.png";
 
-export const OrderList = ({sentProducts}) => {//esto tmb es props.sentProducts
-  console.log(sentProducts);
+export const OrderList = ({sentProducts, handleRemove}) => {//esto tmb es props.sentProducts
+  // console.log(sentProducts);
 
   const [qty, setQty] = useState(1)
-  /* const handleRemove =(id) => {
-    const newList = sentProducts.filter((item) => item.id !== id);
-    setOrderL(newList);
-  } */
 
-  /* const sumaryData = {
-    waiter: '',
-    customer: '',
-    table: '',
-    products: [],
-    orderTime: '',
-    completeTime: '',
-    timeLength: '',
-    completed: '',
+  // qty > 1 ? setQty(qty-1) : setQty(qty)
+
+  const handleQty = (id, sign) => {
+    const filtering = sentProducts.filter(item => item.id === id)
+    if (filtering[0].id===id && sign === '+') {
+      setQty(qty+1)
+    } else if (filtering && sign === '-') {
+      qty > 1 ? setQty(qty-1) : setQty(qty)
+    }
   }
-  const [values, setValues] = useState(sumaryData); */
 
   return (
     <form onSubmit={(e) =>e.preventDefault()} className="orderList">
-      <h2>Resumen del pedido</h2>
+      <h3>Resumen del pedido</h3>
       <section className="customerInfo">
         <p>Cliente : </p> <input type="text" />
         <p>Mesero: </p> <input type="text" />
@@ -51,10 +46,10 @@ export const OrderList = ({sentProducts}) => {//esto tmb es props.sentProducts
                   <div className="prod">
                     <p>{obj.name}</p>
                     <div>
-                      <button onClick={() => qty > 1 ? setQty(qty-1) : setQty(qty)}>-</button>
-                      <p>{qty}</p>
-                      <button onClick={() => setQty(qty+1)}>+</button>
-                      <button><img src={deleteIcon} alt="" /* onClick={() => handleRemove(obj.id)} *//></button>
+                      <button onClick={() => handleQty(obj.id, '-')}>-</button>
+                      <p idQty={obj.id}>{qty}</p>
+                      <button onClick={() => handleQty(obj.id, '+')}>+</button>
+                      <button><img src={deleteIcon} onClick={()=>handleRemove(obj.id)} alt="" /></button>
                     </div>
                   </div>
                   <p>S/. {obj.price*qty}</p>

@@ -13,7 +13,7 @@
     article{
       @include displayFlex(row, space-around, center/* , space-around */);
       li {
-        @include buttonStyle(2px, $golden, $golden, 0.5rem, 0.4rem);
+        @include buttonStyle(2px, $mainColor, $mainColor, 0.5rem, 0.4rem);
         margin-bottom: 1.5rem;
         margin-top: 1.5rem;
         width: 10rem;

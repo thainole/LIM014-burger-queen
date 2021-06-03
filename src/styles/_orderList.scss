@@ -4,12 +4,11 @@
   .orderList {
     width: 35vw;
     padding: 0 0.5rem;
-    h2{
-      font-size: $medium;
+    h3{
       margin-bottom: 0.8rem;
     }
     .customerInfo{
-      border-bottom: dotted 2px $golden;
+      border-bottom: dotted 2px $darkGrey;
       padding-bottom: 1rem;
       p, input {
         display: inline-flex;
@@ -24,7 +23,7 @@
         width: 70%;
         height: 1.2rem;
         border-radius: 0.2rem;
-        border: 1px solid $golden;
+        border: 1px solid $darkGrey;
         font-family: 'Lato', sans-serif;
         outline-style: none;
       }
@@ -33,45 +32,51 @@
         margin-left: 0.2rem;
       }
     }
+    button {
+      cursor:pointer;
+    }
+
     .submitButton{
-      @include buttonStyle(1px, $lightRed, $lightRed, 0.5rem, 0.4rem);
+      @include buttonStyle(1px, $mainColor, $mainColor, 0.5rem, 0.4rem);
       color: $white;
+      font-size: $small;
+      width: 45%;
       margin: 2rem 28%;
       align-self: flex-end;
     }
-  }
 
-  .orderDetails {
-    margin-top: 0.4rem;
-    h4 {
-      text-decoration: underline;
-    }
-    .titles{
-      @include displayFlex(row, space-between, flex-start);
-      font-size: $small;
-      margin: 0.5rem 0;
-    }
-    .prodQty {
-      @include displayFlex(row, space-between, flex-start);
-      margin-bottom: 0.8rem;
-      font-size: $xsmall;
-      .prod{
-        @include displayFlex(column, flex-start, flex-start);
-        width: 80%;
-        div {
-          width: 50%;
-          @include displayFlex(row, space-around, center);
-          button {
-            width: 1.5rem;
-            font-size: 1rem;
-            img{
-              width: 0.9rem;
+    .orderDetails {
+      margin-top: 0.4rem;
+      h4 {
+        text-decoration: underline;
+      }
+      .titles{
+        @include displayFlex(row, space-between, flex-start);
+        font-size: $small;
+        margin: 0.5rem 0;
+      }
+      .prodQty {
+        @include displayFlex(row, space-between, flex-start);
+        margin-bottom: 0.8rem;
+        font-size: $xsmall;
+        .prod{
+          @include displayFlex(column, flex-start, flex-start);
+          width: 80%;
+          div {
+            width: 50%;
+            @include displayFlex(row, space-around, center);
+            button {
+              width: 1.5rem;
+              font-size: 1rem;
+              img{
+                width: 0.9rem;
+              }
             }
           }
         }
-      }
-      p {
-        margin-bottom: 0.3rem;
+        p {
+          margin-bottom: 0.3rem;
+        }
       }
     }
   }

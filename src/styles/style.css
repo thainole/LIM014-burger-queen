@@ -35,8 +35,8 @@
             align-items: center;
   }
   .home article li {
-    border: solid 2px #997400;
-    background-color: #997400;
+    border: solid 2px #ff8508;
+    background-color: #ff8508;
     border-radius: 0.5rem;
     cursor: pointer;
     padding: 0.4rem;
@@ -56,10 +56,9 @@
 
 @media screen and (min-width: 768px) {
   .navServer {
-    padding: 0.6rem 0.6rem 0 0.6rem;
-    border-bottom: solid 1px #997400;
-    font-size: 0.9rem;
-    /* position: fixed; */
+    background-color: #503b25e3;
+    padding: 0.4rem 0.8rem;
+    font-size: 1.05rem;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -70,9 +69,9 @@
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
-    -webkit-box-align: end;
-        -ms-flex-align: end;
-            align-items: flex-end;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
   .navServer ul {
     display: -webkit-box;
@@ -89,16 +88,17 @@
             align-items: center;
   }
   .navServer ul li {
-    border: solid 1px #997400;
-    background-color: #ffff;
-    border-radius: 0.5rem;
-    cursor: pointer;
-    padding: 0.3rem;
-    margin-left: 1rem;
-    /* &:hover {
-          background-color: $golden;
-          color: $white;
-        } */
+    margin-left: 2.1rem;
+  }
+  .navServer ul li:hover {
+    -webkit-transform: scale(1.15);
+            transform: scale(1.15);
+    -webkit-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+  }
+  .navServer ul li a {
+    font-weight: 300;
+    color: #ffff;
   }
   .navServer img {
     width: 2.5rem;
@@ -127,7 +127,7 @@
 @media screen and (min-width: 768px) {
   .productsList {
     width: 60vw;
-    border-right: solid 1px #997400;
+    border-right: solid 1px #666666;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -161,7 +161,7 @@
             align-items: center;
   }
   .productsList nav div li {
-    border: solid 1px #997400;
+    border: solid 1px #666666;
     background-color: #ffff;
     border-radius: 0.5rem;
     cursor: pointer;
@@ -169,7 +169,7 @@
     margin-left: 1rem;
   }
   .productsList nav div li:hover {
-    background-color: #997400;
+    background-color: #ff8508;
     color: #ffff;
   }
   .productsList .cards {
@@ -190,9 +190,22 @@
         flex-wrap: wrap;
     font-size: 0.8rem;
   }
-  .productsList .cards div {
+  .productsList .cards .div {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     text-align: center;
-    border: solid 1px #997400;
+    border: solid 1px transparent;
     background-color: #ffff;
     border-radius: 0.5rem;
     cursor: pointer;
@@ -203,20 +216,23 @@
     width: 8.5rem;
     height: 12rem;
   }
-  .productsList .cards div img {
+  .productsList .cards .div img {
     border-radius: 0.3rem;
     width: 6rem;
+    margin-bottom: 0.3rem;
   }
-  .productsList .cards div button {
-    border: solid 1px #ffff;
-    background-color: #f04e51;
+  .productsList .cards .div div {
+    height: 3rem;
+    padding: 0px;
+  }
+  .productsList .cards .div button {
+    border: solid 1px transparent;
+    background-color: #ff8508;
     border-radius: 0.5rem;
     cursor: pointer;
     padding: 0.3rem;
     margin-top: 0.2rem;
     color: #ffff;
-    -ms-flex-item-align: end;
-        align-self: flex-end;
   }
 }
 
@@ -225,12 +241,11 @@
     width: 35vw;
     padding: 0 0.5rem;
   }
-  .orderList h2 {
-    font-size: 1.3rem;
+  .orderList h3 {
     margin-bottom: 0.8rem;
   }
   .orderList .customerInfo {
-    border-bottom: dotted 2px #997400;
+    border-bottom: dotted 2px #666666;
     padding-bottom: 1rem;
   }
   .orderList .customerInfo p, .orderList .customerInfo input {
@@ -248,7 +263,7 @@
     width: 70%;
     height: 1.2rem;
     border-radius: 0.2rem;
-    border: 1px solid #997400;
+    border: 1px solid #666666;
     font-family: 'Lato', sans-serif;
     outline-style: none;
   }
@@ -256,24 +271,30 @@
     font-size: 0.9rem;
     margin-left: 0.2rem;
   }
+  .orderList button {
+    cursor: pointer;
+  }
   .orderList .submitButton {
-    border: solid 1px #f04e51;
-    background-color: #f04e51;
+    border: solid 1px #ff8508;
+    background-color: #ff8508;
     border-radius: 0.5rem;
     cursor: pointer;
     padding: 0.4rem;
     color: #ffff;
+    font-size: 0.9rem;
+    width: 45%;
     margin: 2rem 28%;
     -ms-flex-item-align: end;
         align-self: flex-end;
   }
-  .orderDetails {
+  .orderList .orderDetails {
     margin-top: 0.4rem;
   }
-  .orderDetails h4 {
+  .orderList .orderDetails h4 {
     text-decoration: underline;
   }
-  .orderDetails .titles {
+
+  .orderList .orderDetails .titles {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -290,7 +311,7 @@
     font-size: 0.9rem;
     margin: 0.5rem 0;
   }
-  .orderDetails .prodQty {
+  .orderList .orderDetails .prodQty {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -307,7 +328,7 @@
     margin-bottom: 0.8rem;
     font-size: 0.8rem;
   }
-  .orderDetails .prodQty .prod {
+  .orderList .orderDetails .prodQty .prod {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -323,7 +344,7 @@
             align-items: flex-start;
     width: 80%;
   }
-  .orderDetails .prodQty .prod div {
+  .orderList .orderDetails .prodQty .prod div {
     width: 50%;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -338,15 +359,48 @@
         -ms-flex-align: center;
             align-items: center;
   }
-  .orderDetails .prodQty .prod div button {
+  .orderList .orderDetails .prodQty .prod div button {
     width: 1.5rem;
     font-size: 1rem;
   }
-  .orderDetails .prodQty .prod div button img {
+  .orderList .orderDetails .prodQty .prod div button img {
     width: 0.9rem;
   }
-  .orderDetails .prodQty p {
+  .orderList .orderDetails .prodQty p {
     margin-bottom: 0.3rem;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .statusCard {
+    font-size: 0.8rem;
+  }
+  .statusCard .cards {
+    border: solid 1px #ff8508;
+    background-color: #ffff;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    padding: 0.4rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    margin: 0.5rem;
+    width: 10rem;
+  }
+  .statusCard .cards h5, .statusCard .cards button {
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
   }
 }
 
@@ -358,8 +412,12 @@
 }
 
 body {
-  background-color: #f0ece2;
+  background-color: #f5f1ef;
   font-family: 'Lato', sans-serif;
+}
+
+h3 {
+  font-size: 1.05rem;
 }
 
 ul {

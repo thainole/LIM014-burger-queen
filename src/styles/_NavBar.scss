@@ -2,21 +2,23 @@
 
 @media screen and (min-width: 768px)/*  and (max-width: 1024px) */ /* and (orientation: landscape) */{
   .navServer{
-    padding: 0.6rem 0.6rem 0 0.6rem;
-    border-bottom: solid 1px $golden;
-    font-size: $small;
-    /* position: fixed; */
-    @include displayFlex(row, space-between, flex-end/* , space-around */);
+    background-color: #503b25e3;
+    padding: 0.4rem 0.8rem;
+    font-size: 1.05rem;
+    @include displayFlex(row, space-between, center);
     ul {
-      @include displayFlex(row, space-around, center/* , space-around */);
-      ;
+      @include displayFlex(row, space-around, center);
+      
       li {
-        @include buttonStyle(1px, $golden, $white, 0.5rem, 0.3rem);
-        margin-left: 1rem;
-        /* &:hover {
-          background-color: $golden;
+        margin-left: 2.1rem;
+        &:hover {
+          transform: scale(1.15);
+          transition: all .2s ease-in-out;
+        }
+        a {
+          font-weight:300;
           color: $white;
-        } */
+        }
       }
     }
     img {
