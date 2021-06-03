@@ -5,23 +5,29 @@
     height: 100vh;
     padding: 1rem;
     text-align: center;
-    @include displayFlex(column, space-around, center/* , space-around */);
+    @include displayFlex(column, space-evenly, center);
     h1 {
       line-height: 3rem;
       font-size: $large;
     }
     article{
-      @include displayFlex(row, space-around, center/* , space-around */);
-      li {
-        @include buttonStyle(2px, $mainColor, $mainColor, 0.5rem, 0.4rem);
-        margin-bottom: 1.5rem;
-        margin-top: 1.5rem;
-        width: 10rem;
+      @include displayFlex(row, space-around, center);
+      ul {
+        @include displayFlex(column, space-around, center);
         a {
+          @include buttonStyle(2px, $mainColor, $mainColor, 0.5rem, 0.4rem);
+          margin-bottom: 1.5rem;
+          margin-top: 1.5rem;
+          width: 10rem;
           font-size: $medium;
           color: white;
+          &:hover {
+            transform: scale(1.15);
+            transition: all .2s ease-in-out;
+          }
         }
       }
+      
       figure {
         img {
           margin-right: 6rem;

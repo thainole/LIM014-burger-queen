@@ -6,22 +6,20 @@ export const OrderStatus = () => {
     <section>
       <NavBar />
         <article className="statusCard">
-          {/* {products.map(p => (
-            <div key={p.id}>
-              <img src={p.img} alt="" />
-              <li>{p.name}</li>
-              <p>S/. {p.price}</p>
-              <button onClick={()=>choosenProducts(p)}>Agregar</button>
-            </div>
-          ))} */}
           <div className="cards">
-            <h5>Order # 1234</h5>
+            <h3>Order # 1234</h3>
             <div>
-              <p>1 Hamburguesa simple de pollo con huevo</p>
-              <p>1 Hamburguesa doble de carne con queso</p>
+              <div className="onlyrow">
+                <p><strong>1</strong></p>
+                <p>Hamburguesa simple de pollo con huevo</p>
+              </div>
+              <div className="onlyrow">
+                <p><strong>1</strong></p>
+                <p>Hamburguesa simple de pollo con huevo</p>
+              </div>
             </div>
-            <button>Agregar</button>
-            <div>
+            <button>Listo para entregar</button>
+            <div className="smallerFont">
               <p>Hora del pedido:</p>
               <p>Hora de terminado:</p>
               <p>Tiempo de duración:</p>

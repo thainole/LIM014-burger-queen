@@ -11,8 +11,8 @@ export const Home = () => {
           <img src={mainBurger} alt="burger" />
         </figure>
         <ul>
-          <li><Link to="/mesero/hacer-pedidos">Mesero</Link></li>
-          <li><Link to="/cocina">Cocina</Link></li>
+          <Link to="/mesero/hacer-pedidos">Mesero</Link>
+          <Link to="/cocina">Cocina</Link>
         </ul>
       </article>
     </section>
