@@ -12,7 +12,7 @@ export const Home = () => {
         </figure>
         <ul>
           <Link to="/mesero/hacer-pedidos">Mesero</Link>
-          <Link to="/cocina">Cocina</Link>
+          <Link to="/cocina/preparar-orden">Cocina</Link>
         </ul>
       </article>
     </section>

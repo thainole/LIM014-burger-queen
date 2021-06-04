@@ -392,6 +392,7 @@
 @media screen and (min-width: 768px) {
   .statusCard {
     margin: 1.3rem;
+    line-height: 1.2rem;
   }
   .statusCard .cards {
     font-size: 0.9rem;
@@ -415,7 +416,7 @@
             align-items: flex-start;
     margin: 0.5rem;
     padding: 0.8rem;
-    width: 13rem;
+    width: 15rem;
   }
   .statusCard .cards h3, .statusCard .cards button {
     -ms-flex-item-align: center;
@@ -431,9 +432,9 @@
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
-    -webkit-box-pack: start;
-        -ms-flex-pack: start;
-            justify-content: flex-start;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
     -webkit-box-align: start;
         -ms-flex-align: start;
             align-items: flex-start;

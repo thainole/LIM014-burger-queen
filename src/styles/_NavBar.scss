@@ -8,7 +8,6 @@
     @include displayFlex(row, space-between, center);
     ul {
       @include displayFlex(row, space-around, center);
-      
       li {
         margin-left: 2.1rem;
         &:hover {
