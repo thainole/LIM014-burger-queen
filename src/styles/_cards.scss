@@ -1,0 +1,31 @@
+@import "./global";
+
+@media screen and (min-width: 768px) {
+  .statusCard{
+    margin: 1.3rem;
+    line-height: 1.2rem;
+    .cards{
+      font-size: $small;
+      @include buttonStyle(1px, $mainColor, $white, 0.5rem, 0.4rem);
+      @include displayFlex(column, flex-start, flex-start);
+      margin: 0.5rem;
+      padding: 0.8rem;
+      width: 15rem;
+      h3, button {
+        align-self: center;
+        margin: 0.5rem;
+      }
+      .onlyrow {
+        @include displayFlex(row, space-between, flex-start);
+      }
+      button {
+        @include buttonStyle(1px, transparent, $mainColor, 0.5rem, 0.2rem);
+        color: $white;
+      }
+      .smallerFont {
+        font-size: $xsmall;
+      }
+    }
+  }
+  
+}

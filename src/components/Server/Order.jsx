@@ -5,13 +5,17 @@ import { OrderList } from './OrderList'
 
 export const Order = () => {
 
-  //3.
   const [orderL, setOrderL] = useState([])
-  //2. Crear funcion y pasarle el parametro que enviamos desde el hijo products.jsx
+  
   const productList = (p) => {
-    console.log(p); // 1 objeto por cada card escogido
-    setOrderL([...orderL, p]);// setList modifica la copia del array del estado inicial y añade los nuevos elementos
-    // console.log(orderL);
+    console.log(p); 
+    setOrderL([...orderL, p]);
+  }
+
+  const deleteProduct = (id) => {
+    console.log(id);
+    const newList = orderL.filter(item => item.id !== id )
+    setOrderL(newList)
   }
 
   return (
@@ -19,7 +23,7 @@ export const Order = () => {
       <NavBar />
       <article className="orderContainer">
         <Products choosenElements={productList}/>{/* 1 */}
-        <OrderList sentProducts={orderL}/>
+        <OrderList sentProducts={orderL} handleRemove={deleteProduct}/>
       </article>
     </section>
   )

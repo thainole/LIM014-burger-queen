@@ -47,10 +47,12 @@ export const Products = (props) => {
       <article>
       <ul className="cards">
         {products.map(p => (
-          <div key={p.id}>
+          <div className="div" key={p.id}>
             <img src={p.img} alt="" />
-            <li>{p.name}</li>
-            <p>S/. {p.price}</p>
+            <div>
+              <li>{p.name}</li>
+              <p>S/. {p.price}</p>
+            </div>
             <button onClick={()=>choosenProducts(p)}>Agregar</button>
           </div>
         ))}

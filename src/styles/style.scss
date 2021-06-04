@@ -4,8 +4,8 @@
 @import "./order";
 @import "./products";
 @import "./orderList";
+@import "./orderStatus";
 // @import "/src/styles/orderHistory";
-// @import "/src/styles/orderStatus";
 // @import "/src/styles/chefOrder";
 
 * {
@@ -14,10 +14,13 @@
   box-sizing: border-box;
 }
 body{
-  background-color: #f0ece2;
+  background-color: #f5f1ef;
   font-family: 'Lato', sans-serif;
 }
 
+h3 {
+  font-size: $xmedium;
+}
 ul {
   list-style: none;
 }
