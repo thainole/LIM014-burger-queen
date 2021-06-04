@@ -24,7 +24,7 @@ export const OrderStatus = () => {
               <p>Hora de terminado:</p>
               <p>Tiempo de duración:</p>
             </div>
-              
+
           </div>
         </article>
     </section>
