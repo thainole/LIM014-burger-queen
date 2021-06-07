@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
-import deleteIcon from "../../img/delete.png";
 import Select from "react-select";
+import { OrderSummaryProd } from "./OrderSummaryProd";
 
-export const OrderList = ({ sentProducts, handleRemove }) => {
+export const OrderSummary = ({ sentProducts, handleRemove }) => {
   // console.log(sentProducts);
   const [itemList, setItemList] = useState([]);
 
@@ -76,25 +76,26 @@ export const OrderList = ({ sentProducts, handleRemove }) => {
           <h4>Precio</h4>
         </div>
         <aside className="sumary">
-          {itemList.map((obj) => (
-            <section className="prodQty" key={obj.id}>
-              <div className="prod">
-                <p>{obj.name}</p>
-                <div>
-                  <button onClick={() => handleQty(obj.id, "-")}>-</button>
-                  <p>{obj.amount}</p>
-                  <button onClick={() => handleQty(obj.id, "+")}>+</button>
-                  <button>
-                    <img
-                      src={deleteIcon}
-                      onClick={() => handleRemove(obj.id)}
-                      alt=""
-                    />
-                  </button>
-                </div>
-              </div>
-              <p>S/. {obj.price * obj.amount}</p>
-            </section>
+          {itemList.map((item) => (
+            <OrderSummaryProd item={item} />
+            // <section className="prodQty" key={obj.id}>
+            //   <div className="prod">
+            //     <p>{obj.name}</p>
+            //     <div>
+            //       <button onClick={() => handleQty(obj.id, "-")}>-</button>
+            //       <p>{obj.amount}</p>
+            //       <button onClick={() => handleQty(obj.id, "+")}>+</button>
+            //       <button>
+            //         <img
+            //           src={deleteIcon}
+            //           onClick={() => handleRemove(obj.id)}
+            //           alt=""
+            //         />
+            //       </button>
+            //     </div>
+            //   </div>
+            //   <p>S/. {obj.price * obj.amount}</p>
+            // </section>
           ))}
           <h3>Total: {}</h3>
         </aside>

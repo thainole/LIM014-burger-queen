@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import { NavBar } from './NavBar'
-import { Products } from './ProductsContainer'
-import { OrderList } from './OrderList'
+import { ProductsContainer } from './ProductsContainer'
+import { OrderSummary } from './OrderSummary'
 
 export const Order = () => {
 
@@ -22,8 +22,8 @@ export const Order = () => {
     <section className="order">
       <NavBar />
       <article className="orderContainer">
-        <Products choosenElements={productList}/>{/* 1 */}
-        <OrderList sentProducts={orderL} handleRemove={deleteProduct}/>
+        <ProductsContainer choosenElements={productList}/>{/* 1 */}
+        <OrderSummary sentProducts={orderL} handleRemove={deleteProduct}/>
       </article>
     </section>
   )

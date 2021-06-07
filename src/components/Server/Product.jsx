@@ -2,11 +2,12 @@ import React, {useState} from 'react';
 
 
 export const Product = ({product, choosenElements}) => {
-    const choosenProducts = (product) => {
-      choosenElements(product);
-    };
 
-    const [disable, setDisable] = useState(false);
+  const choosenProducts = (product) => {
+    choosenElements(product);
+  };
+
+  const [disable, setDisable] = useState(false);
 
   return (
     <div className="div">

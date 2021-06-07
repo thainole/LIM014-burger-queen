@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import dataJson from "./data.json";
 import { Product } from "./Product";
 
-export const Products = ({choosenElements}) => {
+export const ProductsContainer = ({choosenElements}) => {
   const data = dataJson.products;
 
   const firstView = data.filter((elem) => elem.type === "Desayuno");
