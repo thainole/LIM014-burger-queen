@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import deleteIcon from "../../img/delete.png";
+import Select from "react-select";
 
 export const OrderList = ({ sentProducts, handleRemove }) => {
   // console.log(sentProducts);
@@ -16,9 +17,9 @@ export const OrderList = ({ sentProducts, handleRemove }) => {
     // eslint-disable-next-line array-callback-return
     const filtering = itemList.map((item) => {
       if (item.id === id) {
-        if(sign === '+'){
+        if (sign === "+") {
           return { ...item, amount: item.amount + 1 };
-        } else if(sign === '-' && item.amount > 1) {
+        } else if (sign === "-" && item.amount > 1) {
           return { ...item, amount: item.amount - 1 };
         }
       }
@@ -27,20 +28,47 @@ export const OrderList = ({ sentProducts, handleRemove }) => {
     setItemList(filtering);
   };
 
+  const options = [
+    { value: "m1", label: "Mesa 1" },
+    { value: "m2", label: "Mesa 2" },
+    { value: "m3", label: "Mesa 3" },
+  ];
+  const initialStateValues = {
+    client: "",
+    server: "",
+    /* table: "", */
+  };
+  const [values, setValues] = useState(initialStateValues);
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    console.log(name, value);
+    setValues({...values, [name] : value})
+  };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(values);
+  }
   return (
-    <form onSubmit={(e) => e.preventDefault()} className="orderList">
+    <form className="orderList" onSubmit={handleSubmit}>
       <h3>Resumen del pedido</h3>
       <section className="customerInfo">
-        <p>Cliente : </p> <input type="text" />
-        <p>Mesero: </p> <input type="text" />
+        <p>Cliente : </p>
+        <input
+          type="text"
+          name="client"
+          onChange={handleInputChange}
+          value={values.client}
+        />
+        <p>Mesero: </p>
+        <input
+          type="text"
+          name="server"
+          onChange={handleInputChange}
+          value={values.server}
+        />
         <p># Mesa : </p>
-        <select name="# Mesa">
-          <option value="value1">Mesa 1</option>
-          <option value="value2">Mesa 2</option>
-          <option value="value3">Mesa 3</option>
-          <option value="value1">Mesa 4</option>
-          <option value="value2">Mesa 5</option>
-        </select>
+        <Select options={options} name="table" /* value={values.table} *//>
       </section>
       <section className="orderDetails">
         <div className="titles">
@@ -48,28 +76,27 @@ export const OrderList = ({ sentProducts, handleRemove }) => {
           <h4>Precio</h4>
         </div>
         <aside className="sumary">
-          {
-            itemList.map((obj) => (
-              <section className="prodQty" key={obj.id}>
-                <div className="prod">
-                  <p>{obj.name}</p>
-                  <div>
-                    <button onClick={() => handleQty(obj.id, "-")}>-</button>
-                    <p>{obj.amount}</p>
-                    <button onClick={() => handleQty(obj.id, "+")}>+</button>
-                    <button>
-                      <img
-                        src={deleteIcon}
-                        onClick={() => handleRemove(obj.id)}
-                        alt=""
-                      />
-                    </button>
-                  </div>
+          {itemList.map((obj) => (
+            <section className="prodQty" key={obj.id}>
+              <div className="prod">
+                <p>{obj.name}</p>
+                <div>
+                  <button onClick={() => handleQty(obj.id, "-")}>-</button>
+                  <p>{obj.amount}</p>
+                  <button onClick={() => handleQty(obj.id, "+")}>+</button>
+                  <button>
+                    <img
+                      src={deleteIcon}
+                      onClick={() => handleRemove(obj.id)}
+                      alt=""
+                    />
+                  </button>
                 </div>
-                <p>S/. {obj.price * obj.amount}</p>
-              </section>
-            ))}
-          <h3>Total</h3>
+              </div>
+              <p>S/. {obj.price * obj.amount}</p>
+            </section>
+          ))}
+          <h3>Total: {}</h3>
         </aside>
       </section>
       <button className="submitButton" /* onReset={()=>Form.reset()} */>

@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import { NavBar } from './NavBar'
-import { Products } from './Products'
+import { Products } from './ProductsContainer'
 import { OrderList } from './OrderList'
 
 export const Order = () => {
@@ -15,7 +15,7 @@ export const Order = () => {
   const deleteProduct = (id) => {
     console.log(id);
     const newList = orderL.filter(item => item.id !== id )
-    setOrderL(newList)
+    setOrderL(newList);
   }
 
   return (
