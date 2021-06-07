@@ -1,0 +1,52 @@
+@import "./global";
+
+@media screen and (min-width: 768px)/*  and (max-width: 1024px) */ /* and (orientation: landscape) */{
+  .productsList {
+    width: 60vw;
+    border-right: solid 1px $darkGrey;
+    @include displayFlex(column, flex-start, flex-start);
+    nav {
+      font-size: $xsmall;
+      div {
+        @include displayFlex(row, center, center);
+        li {
+          @include buttonStyle(1px, $darkGrey, $white, 0.5rem, 0.3rem);
+          margin-left: 1rem;
+          &:hover {
+            background-color: $mainColor;
+            color: $white;
+          }
+        }
+      }
+    }
+    .cards{
+      @include displayFlex(row, flex-start, center);
+      flex-wrap: wrap;
+      font-size: $xsmall;
+      .div {
+        @include displayFlex(column, flex-start, center);
+        text-align: center;
+        @include buttonStyle(1px, transparent, $white, 0.5rem, 0.4rem);
+        cursor: auto;
+        /* margin-inline: 0.7rem; */
+        margin: 0.5rem;
+        width: 8.5rem;
+        height: 12rem;
+        img {
+          border-radius: 0.3rem;
+          width: 6rem;
+          margin-bottom: 0.3rem;
+        }
+        div {
+          height: 3rem;
+          padding: 0px;
+        }
+        button {
+          @include buttonStyle(1px, transparent, $mainColor, 0.5rem, 0.3rem);
+          margin-top: 0.2rem;
+          color: $white;
+        }
+      }
+    }
+  }
+}

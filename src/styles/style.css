@@ -1,0 +1,479 @@
+@media screen and (min-width: 768px) {
+  .home {
+    height: 100vh;
+    padding: 1rem;
+    text-align: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .home h1 {
+    line-height: 3rem;
+    font-size: 2.2rem;
+  }
+  .home article {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .home article ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .home article ul a {
+    border: solid 2px #ff8508;
+    background-color: #ff8508;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    padding: 0.4rem;
+    margin-bottom: 1.5rem;
+    margin-top: 1.5rem;
+    width: 10rem;
+    font-size: 1.3rem;
+    color: white;
+  }
+  .home article ul a:hover {
+    -webkit-transform: scale(1.15);
+            transform: scale(1.15);
+    -webkit-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+  }
+  .home article figure img {
+    margin-right: 6rem;
+    width: 13rem;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .navServer {
+    background-color: #503b25e3;
+    padding: 0.4rem 0.8rem;
+    font-size: 1.05rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .navServer ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .navServer ul li {
+    margin-left: 2.1rem;
+  }
+  .navServer ul li:hover {
+    -webkit-transform: scale(1.15);
+            transform: scale(1.15);
+    -webkit-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+  }
+  .navServer ul li a {
+    font-weight: 300;
+    color: #ffff;
+  }
+  .navServer img {
+    width: 2.5rem;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .order .orderContainer {
+    padding: 1rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .productsList {
+    width: 60vw;
+    border-right: solid 1px #666666;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+  .productsList nav {
+    font-size: 0.8rem;
+  }
+  .productsList nav div {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .productsList nav div li {
+    border: solid 1px #666666;
+    background-color: #ffff;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    padding: 0.3rem;
+    margin-left: 1rem;
+  }
+  .productsList nav div li:hover {
+    background-color: #ff8508;
+    color: #ffff;
+  }
+  .productsList .cards {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    font-size: 0.8rem;
+  }
+  .productsList .cards .div {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    text-align: center;
+    border: solid 1px transparent;
+    background-color: #ffff;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    padding: 0.4rem;
+    cursor: auto;
+    /* margin-inline: 0.7rem; */
+    margin: 0.5rem;
+    width: 8.5rem;
+    height: 12rem;
+  }
+  .productsList .cards .div img {
+    border-radius: 0.3rem;
+    width: 6rem;
+    margin-bottom: 0.3rem;
+  }
+  .productsList .cards .div div {
+    height: 3rem;
+    padding: 0px;
+  }
+  .productsList .cards .div button {
+    border: solid 1px transparent;
+    background-color: #ff8508;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    padding: 0.3rem;
+    margin-top: 0.2rem;
+    color: #ffff;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .orderList {
+    width: 35vw;
+    padding: 0 0.5rem;
+  }
+  .orderList h3 {
+    margin-bottom: 0.8rem;
+  }
+  .orderList .customerInfo {
+    border-bottom: dotted 2px #666666;
+    padding-bottom: 1rem;
+  }
+  .orderList .customerInfo p, .orderList .customerInfo input {
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    margin-bottom: 0.3rem;
+    font-size: 0.9rem;
+  }
+  .orderList .customerInfo p {
+    margin-right: 0.2rem;
+    width: 25%;
+  }
+  .orderList .customerInfo input, .orderList .customerInfo select {
+    width: 70%;
+    height: 1.2rem;
+    border-radius: 0.2rem;
+    border: 1px solid #666666;
+    font-family: 'Lato', sans-serif;
+    outline-style: none;
+  }
+  .orderList .customerInfo select {
+    font-size: 0.9rem;
+    margin-left: 0.2rem;
+  }
+  .orderList button {
+    cursor: pointer;
+  }
+  .orderList .submitButton {
+    border: solid 1px #ff8508;
+    background-color: #ff8508;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    padding: 0.4rem;
+    color: #ffff;
+    font-size: 0.9rem;
+    width: 45%;
+    margin: 2rem 28%;
+    -ms-flex-item-align: end;
+        align-self: flex-end;
+  }
+  .orderList .orderDetails {
+    margin-top: 0.4rem;
+  }
+  .orderList .orderDetails h4 {
+    text-decoration: underline;
+  }
+  .orderList .orderDetails .titles {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    font-size: 0.9rem;
+    margin: 0.5rem 0;
+  }
+  .orderList .orderDetails .prodQty {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    margin-bottom: 0.8rem;
+    font-size: 0.8rem;
+  }
+  .orderList .orderDetails .prodQty .prod {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    width: 80%;
+  }
+  .orderList .orderDetails .prodQty .prod div {
+    width: 50%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .orderList .orderDetails .prodQty .prod div button {
+    width: 1.5rem;
+    font-size: 1rem;
+  }
+  .orderList .orderDetails .prodQty .prod div button img {
+    width: 0.9rem;
+  }
+  .orderList .orderDetails .prodQty p {
+    margin-bottom: 0.3rem;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .statusCard {
+    margin: 1.3rem;
+    line-height: 1.2rem;
+  }
+  .statusCard .cards {
+    font-size: 0.9rem;
+    border: solid 1px #ff8508;
+    background-color: #ffff;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    padding: 0.4rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    margin: 0.5rem;
+    padding: 0.8rem;
+    width: 15rem;
+  }
+  .statusCard .cards h3, .statusCard .cards button {
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+    margin: 0.5rem;
+  }
+  .statusCard .cards .onlyrow {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+  .statusCard .cards button {
+    border: solid 1px transparent;
+    background-color: #ff8508;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    padding: 0.2rem;
+    color: #ffff;
+  }
+  .statusCard .cards .smallerFont {
+    font-size: 0.8rem;
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  background-color: #f5f1ef;
+  font-family: 'Lato', sans-serif;
+}
+
+h3 {
+  font-size: 1.05rem;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: #000000;
+}
+/*# sourceMappingURL=style.css.map */

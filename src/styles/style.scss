@@ -1,0 +1,33 @@
+@import "./global";
+@import "./home";
+@import "./navBar";
+@import "./order";
+@import "./products";
+@import "./orderList";
+@import "./orderStatus";
+// @import "/src/styles/orderHistory";
+// @import "/src/styles/chefOrder";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  background-color: #f5f1ef;
+  font-family: 'Lato', sans-serif;
+}
+
+h3 {
+  font-size: $xmedium;
+}
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: $black;
+}
+
+

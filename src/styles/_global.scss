@@ -1,0 +1,27 @@
+$mainColor: #ff8508;
+$black: #000000;
+$grey: #cccccc;
+$darkGrey: #666666;
+$white: #ffff;
+
+$xsmall: 0.8rem;
+$small: 0.9rem;
+$xmedium: 1.05rem;
+$medium: 1.3rem;
+$large: 2.2rem;
+
+@mixin displayFlex ($direction, $justify, $alignItems/* , $alignContent */) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $alignItems;
+}
+
+@mixin buttonStyle ($borderSize, $borderColor, $buttonColor, $borderRadius, $buttonPadding) {
+  border: solid $borderSize $borderColor;
+  background-color: $buttonColor;
+  border-radius: $borderRadius;
+  cursor: pointer;
+  padding: $buttonPadding;
+}
+
