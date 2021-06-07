@@ -1,24 +1,34 @@
-import React, {useState} from 'react';
+import React, { useState, useEffect } from "react";
 import deleteIcon from "../../img/delete.png";
 
-export const OrderList = ({sentProducts, handleRemove}) => {//esto tmb es props.sentProducts
+export const OrderList = ({ sentProducts, handleRemove }) => {
   // console.log(sentProducts);
+  const [itemList, setItemList] = useState([]);
 
-  const [qty, setQty] = useState(1)
-
-  // qty > 1 ? setQty(qty-1) : setQty(qty)
+  useEffect(() => {
+    const newAmount = sentProducts.map((item) => {
+      return { ...item, amount: 1 };
+    });
+    setItemList(newAmount);
+  }, [sentProducts]);
 
   const handleQty = (id, sign) => {
-    const filtering = sentProducts.filter(item => item.id === id)
-    if (filtering[0].id===id && sign === '+') {
-      setQty(qty+1)
-    } else if (filtering && sign === '-') {
-      qty > 1 ? setQty(qty-1) : setQty(qty)
-    }
-  }
+    // eslint-disable-next-line array-callback-return
+    const filtering = itemList.map((item) => {
+      if (item.id === id) {
+        if(sign === '+'){
+          return { ...item, amount: item.amount + 1 };
+        } else if(sign === '-' && item.amount > 1) {
+          return { ...item, amount: item.amount - 1 };
+        }
+      }
+      return item;
+    });
+    setItemList(filtering);
+  };
 
   return (
-    <form onSubmit={(e) =>e.preventDefault()} className="orderList">
+    <form onSubmit={(e) => e.preventDefault()} className="orderList">
       <h3>Resumen del pedido</h3>
       <section className="customerInfo">
         <p>Cliente : </p> <input type="text" />
@@ -37,31 +47,34 @@ export const OrderList = ({sentProducts, handleRemove}) => {//esto tmb es props.
           <h4>Productos</h4>
           <h4>Precio</h4>
         </div>
-
         <aside className="sumary">
           {
-            sentProducts.map(obj => (
-              <>
-                <section className="prodQty" key={obj.id}>
-                  <div className="prod">
-                    <p>{obj.name}</p>
-                    <div>
-                      <button onClick={() => handleQty(obj.id, '-')}>-</button>
-                      <p>{qty}</p>
-                      <button onClick={() => handleQty(obj.id, '+')}>+</button>
-                      <button><img src={deleteIcon} onClick={()=>handleRemove(obj.id)} alt="" /></button>
-                    </div>
+            itemList.map((obj) => (
+              <section className="prodQty" key={obj.id}>
+                <div className="prod">
+                  <p>{obj.name}</p>
+                  <div>
+                    <button onClick={() => handleQty(obj.id, "-")}>-</button>
+                    <p>{obj.amount}</p>
+                    <button onClick={() => handleQty(obj.id, "+")}>+</button>
+                    <button>
+                      <img
+                        src={deleteIcon}
+                        onClick={() => handleRemove(obj.id)}
+                        alt=""
+                      />
+                    </button>
                   </div>
-                  <p>S/. {obj.price*qty}</p>
-                </section>
-              </>
-            ))
-            
-          }
+                </div>
+                <p>S/. {obj.price * obj.amount}</p>
+              </section>
+            ))}
           <h3>Total</h3>
         </aside>
       </section>
-      <button className="submitButton" /* onReset={()=>Form.reset()} */>Enviar a cocina</button>
+      <button className="submitButton" /* onReset={()=>Form.reset()} */>
+        Enviar a cocina
+      </button>
     </form>
   );
-}
+};

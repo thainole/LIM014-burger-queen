@@ -6,10 +6,10 @@ import { OrderList } from './OrderList'
 export const Order = () => {
 
   const [orderL, setOrderL] = useState([])
-  
-  const productList = (p) => {
-    console.log(p); 
-    setOrderL([...orderL, p]);
+
+  const productList = (product) => {
+    // console.log(product);
+    setOrderL([...orderL, product]);
   }
 
   const deleteProduct = (id) => {

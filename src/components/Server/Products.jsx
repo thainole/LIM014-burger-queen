@@ -28,9 +28,9 @@ export const Products = (props) => {
         break;
     }
   }
-  const choosenProducts = (p) => {
+  const choosenProducts = (product) => {
     // console.log(p);
-    props.choosenElements(p);
+    props.choosenElements(product);
   }
   return (
     <article className="productsList">
@@ -46,14 +46,14 @@ export const Products = (props) => {
       </nav>
       <article>
       <ul className="cards">
-        {products.map(p => (
-          <div className="div" key={p.id}>
-            <img src={p.img} alt="" />
+        {products.map(product => (
+          <div className="div" key={product.id}>
+            <img src={product.img} alt="" />
             <div>
-              <li>{p.name}</li>
-              <p>S/. {p.price}</p>
+              <li>{product.name}</li>
+              <p>S/. {product.price}</p>
             </div>
-            <button onClick={()=>choosenProducts(p)}>Agregar</button>
+            <button onClick={()=>choosenProducts(product)}>Agregar</button>
           </div>
         ))}
         </ul>
