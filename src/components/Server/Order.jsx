@@ -5,29 +5,33 @@ import { OrderSummary } from './OrderSummary'
 
 export const Order = () => {
 
-  const [initialState, setState] = useState({
+  const [state, setState] = useState({
     orderNumber: "",
     client: "",
     server: "",
     table: "",
     products: [],
+    totalPrice: 0,
     dateInit: "",
     timeInit: "",
     dateEnd: "",
     timeEnd: "",
-    duracion: "",
+    totalTime: "",
   })
 
-  const [orderL, setOrderL] = useState([])
+  // const [orderL, setOrderL] = useState([])
 
   const productList = (product) => {
     // console.log(product);
-    setOrderL([...orderL, product]);
+    // setOrderL([...orderL, product]);
+    setState((prev) => ({...prev, products: [...prev.products, product]}))
+    // solo queremos que cambie products (que traiga los products previos y agregue uno nuevo)
+    // y que traiga todo lo anterior sin cambiarlo
   }
 
   const handleQty = (id, sign) => {
     // eslint-disable-next-line array-callback-return
-    const filtering = orderL.map((item) => {
+    const filtering = state.products.map((item) => {
       if (item.id === id) {
         if (sign === "+") {
           return { ...item, amount: item.amount + 1 };
@@ -37,22 +41,32 @@ export const Order = () => {
       }
       return item;
     });
-    console.log(filtering)
-    setOrderL(filtering);
+    // console.log(filtering)
+    setState((prev) => ({...prev, products: filtering}))
   };
 
   const handleRemove = (id) => {
-    // console.log(id);
-    const newList = orderL.filter(item => item.id !== id )
-    setOrderL(newList);
+    const newList = state.products.filter(item => item.id !== id )
+    setState((prev) => ({...prev, products: newList}));
   }
 
   return (
     <section className="order">
       <NavBar />
       <article className="orderContainer">
-        <ProductsContainer choosenElements={productList} sentProducts={orderL} handleQty={handleQty}/>
-        <OrderSummary sentProducts={orderL} handleQty={handleQty} handleRemove={handleRemove} />
+        <ProductsContainer 
+          choosenElements={productList} 
+          sentProducts={state.products} 
+          handleQty={handleQty}
+        />
+
+        <OrderSummary 
+          state={state}
+          setState={setState}
+          sentProducts={state.products} 
+          handleQty={handleQty} 
+          handleRemove={handleRemove} 
+        />
       </article>
     </section>
   )
