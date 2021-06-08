@@ -21,7 +21,7 @@ export const Order = () => {
 
   // const [orderL, setOrderL] = useState([])
 
-  const productList = (product) => {
+  const chosenProduct = (product) => {
     // console.log(product);
     // setOrderL([...orderL, product]);
     setState((prev) => ({...prev, products: [...prev.products, product]}))
@@ -55,15 +55,16 @@ export const Order = () => {
       <NavBar />
       <article className="orderContainer">
         <ProductsContainer 
-          choosenElements={productList} 
-          sentProducts={state.products} 
+          chosenProduct={chosenProduct} 
+          state={state}
+          //sentProducts={state.products} 
           handleQty={handleQty}
         />
 
         <OrderSummary 
           state={state}
           setState={setState}
-          sentProducts={state.products} 
+          // sentProducts={state.products} 
           handleQty={handleQty} 
           handleRemove={handleRemove} 
         />

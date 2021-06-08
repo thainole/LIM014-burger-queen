@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Select from "react-select";
 import { OrderSummaryProd } from "./OrderSummaryProd";
 
-export const OrderSummary = ({ sentProducts, handleRemove, handleQty, state, setState }) => {
+export const OrderSummary = ({ handleRemove, handleQty, state, setState }) => {
   // console.log(sentProducts);
   // const [itemList, setItemList] = useState([]);
 
@@ -83,7 +83,7 @@ export const OrderSummary = ({ sentProducts, handleRemove, handleQty, state, set
           <h4>Precio</h4>
         </div>
         <aside className="sumary">
-          {sentProducts.map((item) => (
+          {state.products.map((item) => (
             <OrderSummaryProd 
               key={item.id} 
               item={item} 
@@ -109,7 +109,7 @@ export const OrderSummary = ({ sentProducts, handleRemove, handleQty, state, set
             //   <p>S/. {obj.price * obj.amount}</p>
             // </section>
           ))}
-          <h3>Total: {totalSum(state.products)}</h3>
+          <h3>Total:&nbsp;&nbsp;&nbsp;S/. {totalSum(state.products)}</h3>
         </aside>
       </section>
       <button className="submitButton" /* onReset={()=>Form.reset()} */>
