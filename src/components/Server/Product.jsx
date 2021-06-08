@@ -1,15 +1,15 @@
 import React from 'react';
 
 
-export const Product = ({product, choosenElements, sentProducts, handleQty }) => {
+export const Product = ({product, chosenProduct, state, handleQty }) => {
 
   // si ya existe, aplico función handle del padre
   const addProducts = (id) => {
-    const findProduct = sentProducts.find(item => item.id === id)
+    const findProduct = state.products.find(item => item.id === id)
     if (findProduct) {
       return handleQty(id, '+')
     } else {
-      return choosenElements({ ...product, amount: 1 });
+      return chosenProduct({ ...product, amount: 1 });
     }
   }
 
