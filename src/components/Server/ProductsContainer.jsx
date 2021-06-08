@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import dataJson from "./data.json";
 import { Product } from "./Product";
 
-export const ProductsContainer = ({choosenElements}) => {
+export const ProductsContainer = ({ choosenElements, sentProducts, handleQty }) => {
   const data = dataJson.products;
 
   const firstView = data.filter((elem) => elem.type === "Desayuno");
@@ -47,7 +47,7 @@ export const ProductsContainer = ({choosenElements}) => {
       <article>
         <ul className="cards">
           {products.map((product) => (
-            <Product product={product} choosenElements={choosenElements} key={product.id}/>
+            <Product product={product} choosenElements={choosenElements} key={product.id} sentProducts={sentProducts} handleQty={handleQty}/>
             // Hemos pasado cada card como 1 componente aislado para que cda 1 tenga su propio evento(ejem: choosen)
           ))}
         </ul>

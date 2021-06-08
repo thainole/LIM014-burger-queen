@@ -1,21 +1,21 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Select from "react-select";
 import { OrderSummaryProd } from "./OrderSummaryProd";
 
-export const OrderSummary = ({ sentProducts, handleRemove }) => {
+export const OrderSummary = ({ sentProducts, handleRemove, handleQty }) => {
   // console.log(sentProducts);
-  const [itemList, setItemList] = useState([]);
+  // const [itemList, setItemList] = useState([]);
 
-  useEffect(() => {
+  /*   useEffect(() => {
     const newAmount = sentProducts.map((item) => {
       return { ...item, amount: 1 };
     });
-    setItemList(newAmount);
-  }, [sentProducts]);
+    setOrderL(newAmount);
+  }, [sentProducts]); */
 
-  const handleQty = (id, sign) => {
+  /* const handleQty = (id, sign) => {
     // eslint-disable-next-line array-callback-return
-    const filtering = itemList.map((item) => {
+    const filtering = sentProducts.map((item) => {
       if (item.id === id) {
         if (sign === "+") {
           return { ...item, amount: item.amount + 1 };
@@ -25,8 +25,9 @@ export const OrderSummary = ({ sentProducts, handleRemove }) => {
       }
       return item;
     });
-    setItemList(filtering);
-  };
+    console.log(filtering)
+    setOrderL(filtering);
+  }; */
 
   const options = [
     { value: "m1", label: "Mesa 1" },
@@ -76,8 +77,8 @@ export const OrderSummary = ({ sentProducts, handleRemove }) => {
           <h4>Precio</h4>
         </div>
         <aside className="sumary">
-          {itemList.map((item) => (
-            <OrderSummaryProd item={item} />
+          {sentProducts.map((item) => (
+            <OrderSummaryProd key={item.id} item={item} handleQty={handleQty} handleRemove={handleRemove} />
             // <section className="prodQty" key={obj.id}>
             //   <div className="prod">
             //     <p>{obj.name}</p>
@@ -97,7 +98,7 @@ export const OrderSummary = ({ sentProducts, handleRemove }) => {
             //   <p>S/. {obj.price * obj.amount}</p>
             // </section>
           ))}
-          <h3>Total: {}</h3>
+          <h3>Total: {sentProducts.reduce((acc, item) => acc + item.price * item.amount, 0)}</h3>
         </aside>
       </section>
       <button className="submitButton" /* onReset={()=>Form.reset()} */>
