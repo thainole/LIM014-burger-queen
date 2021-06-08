@@ -8,15 +8,19 @@ export const OrderSummaryProd = ({item, handleQty, handleRemove}) => {
     <div className="prod">
       <p>{item.name}</p>
       <div>
-        <button onClick={() => handleQty(item.id, "-")}>-</button>
+        <button onClick={(e) => {
+          e.preventDefault()
+          handleQty(item.id, "-")}}>-</button>
         <p>{item.amount}</p>
-        <button onClick={() => handleQty(item.id, "+")}>+</button>
+        <button onClick={(e) => {
+          e.preventDefault()
+          handleQty(item.id, "+")}}>+</button>
         <button>
           <img
             src={deleteIcon}
-            onClick={() => {
-              handleRemove(item.id)
-            }}
+            onClick={(e) => {
+              e.preventDefault()
+              handleRemove(item.id)}}
             alt=""
           />
         </button>

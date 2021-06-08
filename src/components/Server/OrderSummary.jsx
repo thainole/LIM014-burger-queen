@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import Select from "react-select";
 import { OrderSummaryProd } from "./OrderSummaryProd";
+import { createOrder } from '../../firebase/firestore'
 
-export const OrderSummary = ({ handleRemove, handleQty, state, setState }) => {
+export const OrderSummary = ({ handleRemove, handleQty, state, setState, initialValues }) => {
 
   const totalSum = (products) => {
     const total = products.reduce((acc, item) => acc + item.price * item.amount, 0);
@@ -15,23 +16,22 @@ export const OrderSummary = ({ handleRemove, handleQty, state, setState }) => {
     { value: "m3", label: "Mesa 3" },
   ];
 
-  const initialStateValues = {
-    client: "",
-    server: "",
-    /* table: "", */
-  };
-
-  const [values, setValues] = useState(initialStateValues);
-
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     console.log(name, value);
-    setValues({...values, [name] : value})
+    setState({...state, [name] : value})
   };
+
+  const dataStore = async(state) => {
+    console.log(state);
+    await createOrder(state);
+    await setState(initialValues);
+  }
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(values);
+    // console.log(values);
+    dataStore(state);
   };
 
   return (
@@ -43,14 +43,14 @@ export const OrderSummary = ({ handleRemove, handleQty, state, setState }) => {
           type="text"
           name="client"
           onChange={handleInputChange}
-          value={values.client}
+          value={state.client}
         />
         <p>Mesero: </p>
         <input
           type="text"
           name="server"
           onChange={handleInputChange}
-          value={values.server}
+          value={state.server}
         />
         <p># Mesa : </p>
         <Select options={options} name="table" /* value={values.table} *//>
@@ -72,7 +72,7 @@ export const OrderSummary = ({ handleRemove, handleQty, state, setState }) => {
           <h3>Total:&nbsp;&nbsp;&nbsp;S/. {totalSum(state.products)}</h3>
         </aside>
       </section>
-      <button className="submitButton" /* onReset={()=>Form.reset()} */>
+      <button className="submitButton" >
         Enviar a cocina
       </button>
     </form>
