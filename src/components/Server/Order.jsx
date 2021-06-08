@@ -4,8 +4,7 @@ import { ProductsContainer } from './ProductsContainer'
 import { OrderSummary } from './OrderSummary'
 
 export const Order = () => {
-
-  const [state, setState] = useState({
+  const initialValues = {
     orderNumber: "",
     client: "",
     server: "",
@@ -17,7 +16,9 @@ export const Order = () => {
     dateEnd: "",
     timeEnd: "",
     totalTime: "",
-  })
+  }
+
+  const [state, setState] = useState(initialValues)
 
   // const [orderL, setOrderL] = useState([])
 
@@ -54,19 +55,18 @@ export const Order = () => {
     <section className="order">
       <NavBar />
       <article className="orderContainer">
-        <ProductsContainer 
-          chosenProduct={chosenProduct} 
+        <ProductsContainer
+          chosenProduct={chosenProduct}
           state={state}
-          //sentProducts={state.products} 
           handleQty={handleQty}
         />
 
-        <OrderSummary 
+        <OrderSummary
           state={state}
           setState={setState}
-          // sentProducts={state.products} 
-          handleQty={handleQty} 
-          handleRemove={handleRemove} 
+          handleQty={handleQty}
+          handleRemove={handleRemove}
+          initialValues={initialValues}
         />
       </article>
     </section>
