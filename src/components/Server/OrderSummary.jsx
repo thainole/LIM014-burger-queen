@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Select from "react-select";
 import { OrderSummaryProd } from "./OrderSummaryProd";
 
-export const OrderSummary = ({ sentProducts, handleRemove, handleQty }) => {
+export const OrderSummary = ({ sentProducts, handleRemove, handleQty, state, setState }) => {
   // console.log(sentProducts);
   // const [itemList, setItemList] = useState([]);
 
@@ -28,6 +28,12 @@ export const OrderSummary = ({ sentProducts, handleRemove, handleQty }) => {
     console.log(filtering)
     setOrderL(filtering);
   }; */
+
+  const totalSum = (products) => {
+    const total = products.reduce((acc, item) => acc + item.price * item.amount, 0);
+    return total
+    // setState((prev) => ({...prev, totalPrice: total}))
+  }
 
   const options = [
     { value: "m1", label: "Mesa 1" },
@@ -78,7 +84,12 @@ export const OrderSummary = ({ sentProducts, handleRemove, handleQty }) => {
         </div>
         <aside className="sumary">
           {sentProducts.map((item) => (
-            <OrderSummaryProd key={item.id} item={item} handleQty={handleQty} handleRemove={handleRemove} />
+            <OrderSummaryProd 
+              key={item.id} 
+              item={item} 
+              handleQty={handleQty} 
+              handleRemove={handleRemove} 
+            />
             // <section className="prodQty" key={obj.id}>
             //   <div className="prod">
             //     <p>{obj.name}</p>
@@ -98,7 +109,7 @@ export const OrderSummary = ({ sentProducts, handleRemove, handleQty }) => {
             //   <p>S/. {obj.price * obj.amount}</p>
             // </section>
           ))}
-          <h3>Total: {sentProducts.reduce((acc, item) => acc + item.price * item.amount, 0)}</h3>
+          <h3>Total: {totalSum(state.products)}</h3>
         </aside>
       </section>
       <button className="submitButton" /* onReset={()=>Form.reset()} */>
