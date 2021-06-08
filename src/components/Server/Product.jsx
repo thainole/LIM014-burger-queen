@@ -1,13 +1,17 @@
-import React, {useState} from 'react';
+import React from 'react';
 
 
-export const Product = ({product, choosenElements}) => {
+export const Product = ({product, choosenElements, sentProducts, handleQty }) => {
 
-  const choosenProducts = (product) => {
-    choosenElements(product);
-  };
-
-  const [disable, setDisable] = useState(false);
+  // si ya existe, aplico función handle del padre
+  const addProducts = (id) => {
+    const findProduct = sentProducts.find(item => item.id === id)
+    if (findProduct) {
+      return handleQty(id, '+')
+    } else {
+      return choosenElements({ ...product, amount: 1 });
+    }
+  }
 
   return (
     <div className="div">
@@ -17,11 +21,7 @@ export const Product = ({product, choosenElements}) => {
         <p>S/. {product.price}</p>
       </div>
       <button
-        onClick={() => {
-          choosenProducts(product);
-          setDisable(true);
-        }}
-        disabled={disable}
+        onClick={() => addProducts(product.id)}
       >
         Agregar
       </button>

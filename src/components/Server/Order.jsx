@@ -5,6 +5,19 @@ import { OrderSummary } from './OrderSummary'
 
 export const Order = () => {
 
+  const [initialState, setState] = useState({
+    orderNumber: "",
+    client: "",
+    server: "",
+    table: "",
+    products: [],
+    dateInit: "",
+    timeInit: "",
+    dateEnd: "",
+    timeEnd: "",
+    duracion: "",
+  })
+
   const [orderL, setOrderL] = useState([])
 
   const productList = (product) => {
@@ -12,8 +25,24 @@ export const Order = () => {
     setOrderL([...orderL, product]);
   }
 
-  const deleteProduct = (id) => {
-    console.log(id);
+  const handleQty = (id, sign) => {
+    // eslint-disable-next-line array-callback-return
+    const filtering = orderL.map((item) => {
+      if (item.id === id) {
+        if (sign === "+") {
+          return { ...item, amount: item.amount + 1 };
+        } else if (sign === "-" && item.amount > 1) {
+          return { ...item, amount: item.amount - 1 };
+        }
+      }
+      return item;
+    });
+    console.log(filtering)
+    setOrderL(filtering);
+  };
+
+  const handleRemove = (id) => {
+    // console.log(id);
     const newList = orderL.filter(item => item.id !== id )
     setOrderL(newList);
   }
@@ -22,8 +51,8 @@ export const Order = () => {
     <section className="order">
       <NavBar />
       <article className="orderContainer">
-        <ProductsContainer choosenElements={productList}/>{/* 1 */}
-        <OrderSummary sentProducts={orderL} handleRemove={deleteProduct}/>
+        <ProductsContainer choosenElements={productList} sentProducts={orderL} handleQty={handleQty}/>
+        <OrderSummary sentProducts={orderL} handleQty={handleQty} handleRemove={handleRemove} />
       </article>
     </section>
   )
