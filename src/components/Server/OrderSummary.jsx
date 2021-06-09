@@ -9,7 +9,6 @@ export const OrderSummary = ({ handleRemove, handleQty, state, setState, initial
     return total
   }
   
-
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     console.log(name, value);
