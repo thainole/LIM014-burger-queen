@@ -16,18 +16,13 @@ export const Order = () => {
     dateEnd: "",
     timeEnd: "",
     totalTime: "",
+    status: "pending"
   }
 
   const [state, setState] = useState(initialValues)
 
-  // const [orderL, setOrderL] = useState([])
-
   const chosenProduct = (product) => {
-    // console.log(product);
-    // setOrderL([...orderL, product]);
     setState((prev) => ({...prev, products: [...prev.products, product]}))
-    // solo queremos que cambie products (que traiga los products previos y agregue uno nuevo)
-    // y que traiga todo lo anterior sin cambiarlo
   }
 
   const handleQty = (id, sign) => {
@@ -42,7 +37,6 @@ export const Order = () => {
       }
       return item;
     });
-    // console.log(filtering)
     setState((prev) => ({...prev, products: filtering}))
   };
 
