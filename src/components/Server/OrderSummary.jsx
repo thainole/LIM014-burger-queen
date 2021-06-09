@@ -1,5 +1,4 @@
 import React from "react";
-import Select from "react-select";
 import { OrderSummaryProd } from "./OrderSummaryProd";
 import { createOrder } from '../../firebase/firestore'
 
@@ -9,13 +8,7 @@ export const OrderSummary = ({ handleRemove, handleQty, state, setState, initial
     const total = products.reduce((acc, item) => acc + item.price * item.amount, 0);
     return total
   }
-
-  const options = [
-    { value: "m1", label: "Mesa 1" },
-    { value: "m2", label: "Mesa 2" },
-    { value: "m3", label: "Mesa 3" },
-  ];
-
+  
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     console.log(name, value);
@@ -30,7 +23,6 @@ export const OrderSummary = ({ handleRemove, handleQty, state, setState, initial
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // console.log(values);
     dataStore(state);
   };
 
@@ -53,7 +45,14 @@ export const OrderSummary = ({ handleRemove, handleQty, state, setState, initial
           value={state.server}
         />
         <p># Mesa : </p>
-        <Select options={options} name="table" /* value={values.table} *//>
+        <input
+          type="number"
+          name="table"
+          min ="1" max="9"
+          placeholder="1-9"
+          onChange={handleInputChange}
+          value={state.table}
+        />
       </section>
       <section className="orderDetails">
         <div className="titles">
