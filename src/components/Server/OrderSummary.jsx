@@ -8,7 +8,6 @@ export const OrderSummary = ({ handleRemove, handleQty, state, setState, initial
     const total = products.reduce((acc, item) => acc + item.price * item.amount, 0);
     return total
   }
-  
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     console.log(name, value);
@@ -16,7 +15,7 @@ export const OrderSummary = ({ handleRemove, handleQty, state, setState, initial
   };
 
   const dataStore = async(state) => {
-    console.log(state);
+    console.log(state);//objeto de orden
     await createOrder(state);
     await setState(initialValues);
   }

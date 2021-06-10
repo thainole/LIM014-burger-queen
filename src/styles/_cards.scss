@@ -4,13 +4,16 @@
   .statusCard{
     margin: 1.3rem;
     line-height: 1.2rem;
+    @include displayFlex(row, flex-start, flex-start);
+    flex-wrap: wrap;
     .cards{
       font-size: $small;
       @include buttonStyle(1px, $mainColor, $white, 0.5rem, 0.4rem);
       @include displayFlex(column, flex-start, flex-start);
       margin: 0.5rem;
       padding: 0.8rem;
-      width: 15rem;
+      width: 14rem;
+      display: inline-flex;
       h3, button {
         align-self: center;
         margin: 0.5rem;
@@ -27,5 +30,5 @@
       }
     }
   }
-  
+
 }

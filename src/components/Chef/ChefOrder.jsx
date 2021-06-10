@@ -1,30 +1,36 @@
 import React from 'react'
-import { readAllOrders } from '../../firebase/firestore'
+import { db } from '../../firebase/config'
+// import { readAllOrders } from '../../firebase/firestore'
 import { ChefEachOrder } from './ChefEachOrder';
 import { ChefNavBar } from './ChefNavBar';
 
-export const Chef = () => {
+export const ChefOrder = () => {
 
   const [orders, setOrders] = React.useState([])
 
-  const readOrders = () => {
-    setOrders(readAllOrders) 
-  }
-  console.log(setOrders(readAllOrders));
-
   React.useEffect(() => {
-    readOrders()
+    db.collection('orders')
+    .orderBy('orderDate', 'desc')
+    .onSnapshot((querySnapshot) => {
+      const arrOrders = [];
+      querySnapshot.docs.forEach((doc) => arrOrders.push({
+        orderId: doc.id,
+        ...doc.data(),
+      }))
+      setOrders(arrOrders)
+    });
   }, [])
 
   return (
     <section>
       <ChefNavBar />
       <article className="statusCard">
-        {orders.map(order => (
-          <ChefEachOrder order={order} key={order.id}/>
-        ))}
+        { orders.length > 0 ?
+          orders.map((order) => (
+            <ChefEachOrder className="chefOrderContainer" order={order} key={order.id}/>
+          )): null
+        }
       </article>
     </section>
-    
   )
 }
