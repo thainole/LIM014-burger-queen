@@ -15,7 +15,7 @@ export const OrderSummary = ({ handleRemove, handleQty, state, setState, initial
   };
 
   const dataStore = async(state) => {
-    console.log(state);
+    console.log(state);//objeto de orden
     await createOrder(state);
     await setState(initialValues);
   }

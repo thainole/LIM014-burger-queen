@@ -2,8 +2,10 @@ import React, {useState} from 'react'
 import { NavBar } from './NavBar'
 import { ProductsContainer } from './ProductsContainer'
 import { OrderSummary } from './OrderSummary'
+import {dateOrderDB, orderDate } from '../../firebase/firestore'
 
 export const Order = () => {
+
   const initialValues = {
     orderNumber: "",
     client: "",
@@ -11,8 +13,9 @@ export const Order = () => {
     table: "",
     products: [],
     totalPrice: 0,
-    dateInit: "",
-    timeInit: "",
+    dateInit: dateOrderDB(),
+    orderDate: orderDate(),
+    //timeInit: "",
     dateEnd: "",
     timeEnd: "",
     totalTime: "",
