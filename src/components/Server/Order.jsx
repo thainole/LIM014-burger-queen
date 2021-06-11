@@ -2,20 +2,20 @@ import React, {useState} from 'react'
 import { NavBar } from './NavBar'
 import { ProductsContainer } from './ProductsContainer'
 import { OrderSummary } from './OrderSummary'
-import {dateOrderDB, orderDate } from '../../firebase/firestore'
+import { orderTime, orderDate, orderDateTime } from '../../firebase/firestore'
 
 export const Order = () => {
-
+  
   const initialValues = {
-    orderNumber: "",
+    orderNumber: 0,
     client: "",
     server: "",
     table: "",
     products: [],
     totalPrice: 0,
-    dateInit: dateOrderDB(),
-    orderDate: orderDate(),
-    //timeInit: "",
+    dateInit: orderDate(),
+    timeInit: orderTime(),
+    orderDateTime: orderDateTime(),
     dateEnd: "",
     timeEnd: "",
     totalTime: "",
@@ -27,6 +27,7 @@ export const Order = () => {
   const chosenProduct = (product) => {
     setState((prev) => ({...prev, products: [...prev.products, product]}))
   }
+
 
   const handleQty = (id, sign) => {
     // eslint-disable-next-line array-callback-return

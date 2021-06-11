@@ -12,6 +12,7 @@
       @include displayFlex(column, flex-start, flex-start);
       margin: 0.7rem;
       width: 13.5rem;
+      cursor: auto;
       h3, button {
         align-self: center;
         margin: 0.5rem;
@@ -22,6 +23,7 @@
       button {
         @include buttonStyle(1px, transparent, $mainColor, 0.5rem, 0.2rem);
         color: $white;
+        width: 7.5rem;
       }
       .smallerFont {
         font-size: $xsmall;

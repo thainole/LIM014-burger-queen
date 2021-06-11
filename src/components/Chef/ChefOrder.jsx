@@ -10,7 +10,7 @@ export const ChefOrder = () => {
 
   React.useEffect(() => {
     db.collection('orders')
-    .orderBy('orderDate', 'desc')
+    .orderBy('orderDateTime', 'desc')
     .onSnapshot((querySnapshot) => {
       const arrOrders = [];
       querySnapshot.docs.forEach((doc) => arrOrders.push({

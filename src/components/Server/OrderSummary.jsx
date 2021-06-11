@@ -10,13 +10,11 @@ export const OrderSummary = ({ handleRemove, handleQty, state, setState, initial
   }
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    console.log(name, value);
     setState({...state, [name] : value})
   };
-
-  const dataStore = async(state) => {
-    console.log(state);//objeto de orden
-    await createOrder(state);
+  
+  const dataStore = async(state/* , totalSum */) => {
+    await createOrder(state/* , totalSum */);
     await setState(initialValues);
   }
 

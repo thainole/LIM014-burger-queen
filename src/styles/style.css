@@ -175,6 +175,7 @@
             align-items: flex-start;
     margin: 0.7rem;
     width: 13.5rem;
+    cursor: auto;
   }
   .statusCard .cards h3, .statusCard .cards button {
     -ms-flex-item-align: center;
@@ -204,6 +205,7 @@
     cursor: pointer;
     padding: 0.2rem;
     color: #ffff;
+    width: 7.5rem;
   }
   .statusCard .cards .smallerFont {
     font-size: 0.8rem;
@@ -456,37 +458,6 @@
   }
 }
 
-/* @import "./global";
-
-@media screen and (min-width: 768px) {
-  .statusCard{
-    margin: 1.3rem;
-    .cards{
-      font-size: $small;
-      @include buttonStyle(1px, $mainColor, $white, 0.5rem, 0.4rem);
-      @include displayFlex(column, flex-start, flex-start);
-      margin: 0.5rem;
-      padding: 0.8rem;
-      width: 13rem;
-      h3, button {
-        align-self: center;
-        margin: 0.5rem;
-      }
-      .onlyrow {
-        @include displayFlex(row, flex-start, flex-start);
-      }
-      button {
-        @include buttonStyle(1px, transparent, $mainColor, 0.5rem, 0.2rem);
-        color: $white;
-      }
-      .smallerFont {
-        font-size: $xsmall;
-      }
-    }
-  }
-  
-}
- */
 * {
   margin: 0;
   padding: 0;
