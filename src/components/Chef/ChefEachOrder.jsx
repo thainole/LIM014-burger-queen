@@ -1,14 +1,22 @@
 import React from 'react'
+//import { duration } from '../../firebase/firestore'
 
 export const ChefEachOrder = ({order}) => {
-  console.log(order)
+
+  /* const abc = duration(order.timeInit)
+  console.log(order.timeInit)
+  console.log(abc)
+  //console.log(order) */
+  
   return (
     <aside className="cards">
-      <h3>Order #1234</h3>
+      <h3>Order #{order.orderNumber}</h3>
       <div className="smallerFont">
         <p>Cliente: {order.client} </p>
         <p>Mesero: {order.server} (Mesa #{order.table})</p>
-        <p>Hora del pedido: {order.dateInit}{/*  {order.timeInit} */}</p>
+        <p>Fecha: {order.dateInit}</p>
+        <p>Hora: {order.timeInit}</p>
+        {/* <p>Tiempo: {order.totalTime}</p> */}
       </div><br />
       <div>
         { order.products ?
@@ -19,7 +27,7 @@ export const ChefEachOrder = ({order}) => {
         </div>
         )): null}
       </div><br />
-      <button>Orden lista para entregar</button>
+      <button>Pedido listo</button>
     </aside>
   )
 

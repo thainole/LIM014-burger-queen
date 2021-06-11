@@ -3,27 +3,27 @@
 @media screen and (min-width: 768px) {
   .statusCard{
     margin: 1.3rem;
-    line-height: 1.2rem;
-    @include displayFlex(row, flex-start, flex-start);
+    line-height: 1.1rem;
+    display: flex;
     flex-wrap: wrap;
     .cards{
       font-size: $small;
-      @include buttonStyle(1px, $mainColor, $white, 0.5rem, 0.4rem);
+      @include buttonStyle(1px, $mainColor, $white, 0.5rem, 0.8rem);
       @include displayFlex(column, flex-start, flex-start);
-      margin: 0.5rem;
-      padding: 0.8rem;
-      width: 14rem;
-      display: inline-flex;
+      margin: 0.7rem;
+      width: 13.5rem;
+      cursor: auto;
       h3, button {
         align-self: center;
         margin: 0.5rem;
       }
       .onlyrow {
-        @include displayFlex(row, space-between, flex-start);
+        @include displayFlex(row, flex-start, flex-start);
       }
       button {
         @include buttonStyle(1px, transparent, $mainColor, 0.5rem, 0.2rem);
         color: $white;
+        width: 7.5rem;
       }
       .smallerFont {
         font-size: $xsmall;
