@@ -1,21 +1,21 @@
 import React from 'react'
 //import { duration } from '../../firebase/firestore'
+import { updateStatusOrder  } from '../../firebase/firestore'
 
 export const ChefEachOrder = ({order}) => {
 
-  /* const abc = duration(order.timeInit)
-  console.log(order.timeInit)
-  console.log(abc)
-  //console.log(order) */
+  const mealCooked = (id) => {
+    updateStatusOrder(id, order.status = 'ready')
+  }///* CAMBIO */
   
   return (
     <aside className="cards">
       <h3>Order #{order.orderNumber}</h3>
       <div className="smallerFont">
-        <p>Cliente: {order.client} </p>
-        <p>Mesero: {order.server} (Mesa #{order.table})</p>
-        <p>Fecha: {order.dateInit}</p>
-        <p>Hora: {order.timeInit}</p>
+        {/* <p>Cliente: {order.client} </p> */}
+        <p>Mesero: {order.server} {/* (Mesa #{order.table}) */}</p>
+        {/* <p>Fecha: {order.dateInit}</p> */}
+        <p>Hora del pedido: {order.timeInit}</p>
         {/* <p>Tiempo: {order.totalTime}</p> */}
       </div><br />
       <div>
@@ -27,7 +27,7 @@ export const ChefEachOrder = ({order}) => {
         </div>
         )): null}
       </div><br />
-      <button>Pedido listo</button>
+      <button /* CAMBIO */onClick={()=> mealCooked(order.orderId)}>Pedido listo</button>
     </aside>
   )
 

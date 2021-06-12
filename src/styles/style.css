@@ -3,51 +3,26 @@
     height: 100vh;
     padding: 1rem;
     text-align: center;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-pack: space-evenly;
-        -ms-flex-pack: space-evenly;
-            justify-content: space-evenly;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
   }
   .home h1 {
     line-height: 3rem;
     font-size: 2.2rem;
   }
   .home article {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    -ms-flex-pack: distribute;
-        justify-content: space-around;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
   }
   .home article ul {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -ms-flex-pack: distribute;
-        justify-content: space-around;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
   }
   .home article ul a {
     border: solid 2px #ff8508;
@@ -62,58 +37,36 @@
     color: white;
   }
   .home article ul a:hover {
-    -webkit-transform: scale(1.15);
-            transform: scale(1.15);
-    -webkit-transition: all .2s ease-in-out;
-    transition: all .2s ease-in-out;
+    transform: scale(1.15);
+    transition: all 0.2s ease-in-out;
   }
   .home article figure img {
     margin-right: 6rem;
     width: 13rem;
   }
 }
-
 @media screen and (min-width: 768px) {
   .navServer {
     background-color: #503b25e3;
     padding: 0.4rem 0.8rem;
     font-size: 1.05rem;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
   }
   .navServer ul {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    -ms-flex-pack: distribute;
-        justify-content: space-around;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
   }
   .navServer ul li {
     margin-left: 2.1rem;
   }
   .navServer ul li:hover {
-    -webkit-transform: scale(1.15);
-            transform: scale(1.15);
-    -webkit-transition: all .2s ease-in-out;
-    transition: all .2s ease-in-out;
+    transform: scale(1.15);
+    transition: all 0.2s ease-in-out;
   }
   .navServer ul li a {
     font-weight: 300;
@@ -123,35 +76,21 @@
     width: 2.5rem;
   }
 }
-
 @media screen and (min-width: 768px) {
   .order .orderContainer {
     padding: 1rem;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-    -webkit-box-align: start;
-        -ms-flex-align: start;
-            align-items: flex-start;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
   }
 }
-
 @media screen and (min-width: 768px) {
   .statusCard {
     margin: 1.3rem;
     line-height: 1.1rem;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
+    flex-wrap: wrap;
   }
   .statusCard .cards {
     font-size: 0.9rem;
@@ -160,43 +99,23 @@
     border-radius: 0.5rem;
     cursor: pointer;
     padding: 0.8rem;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-pack: start;
-        -ms-flex-pack: start;
-            justify-content: flex-start;
-    -webkit-box-align: start;
-        -ms-flex-align: start;
-            align-items: flex-start;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
     margin: 0.7rem;
     width: 13.5rem;
     cursor: auto;
   }
   .statusCard .cards h3, .statusCard .cards button {
-    -ms-flex-item-align: center;
-        -ms-grid-row-align: center;
-        align-self: center;
+    align-self: center;
     margin: 0.5rem;
   }
   .statusCard .cards .onlyrow {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    -webkit-box-pack: start;
-        -ms-flex-pack: start;
-            justify-content: flex-start;
-    -webkit-box-align: start;
-        -ms-flex-align: start;
-            align-items: flex-start;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
   }
   .statusCard .cards button {
     border: solid 1px transparent;
@@ -211,42 +130,23 @@
     font-size: 0.8rem;
   }
 }
-
 @media screen and (min-width: 768px) {
   .productsList {
     width: 60vw;
     border-right: solid 1px #666666;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-pack: start;
-        -ms-flex-pack: start;
-            justify-content: flex-start;
-    -webkit-box-align: start;
-        -ms-flex-align: start;
-            align-items: flex-start;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
   }
   .productsList nav {
     font-size: 0.8rem;
   }
   .productsList nav div {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
   }
   .productsList nav div li {
     border: solid 1px #666666;
@@ -261,37 +161,18 @@
     color: #ffff;
   }
   .productsList .cards {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    -webkit-box-pack: start;
-        -ms-flex-pack: start;
-            justify-content: flex-start;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
     font-size: 0.8rem;
   }
   .productsList .cards .div {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-pack: start;
-        -ms-flex-pack: start;
-            justify-content: flex-start;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
     text-align: center;
     border: solid 1px transparent;
     background-color: #ffff;
@@ -323,7 +204,6 @@
     color: #ffff;
   }
 }
-
 @media screen and (min-width: 768px) {
   .orderList {
     width: 35vw;
@@ -337,8 +217,6 @@
     padding-bottom: 1rem;
   }
   .orderList .customerInfo p, .orderList .customerInfo input {
-    display: -webkit-inline-box;
-    display: -ms-inline-flexbox;
     display: inline-flex;
     margin-bottom: 0.3rem;
     font-size: 0.9rem;
@@ -352,7 +230,7 @@
     height: 1.2rem;
     border-radius: 0.2rem;
     border: 1px solid #666666;
-    font-family: 'Lato', sans-serif;
+    font-family: "Lato", sans-serif;
     outline-style: none;
   }
   .orderList .customerInfo select {
@@ -372,8 +250,7 @@
     font-size: 0.9rem;
     width: 45%;
     margin: 2rem 28%;
-    -ms-flex-item-align: end;
-        align-self: flex-end;
+    align-self: flex-end;
   }
   .orderList .orderDetails {
     margin-top: 0.4rem;
@@ -382,69 +259,34 @@
     text-decoration: underline;
   }
   .orderList .orderDetails .titles {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-    -webkit-box-align: start;
-        -ms-flex-align: start;
-            align-items: flex-start;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
     font-size: 0.9rem;
     margin: 0.5rem 0;
   }
   .orderList .orderDetails .prodQty {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-    -webkit-box-align: start;
-        -ms-flex-align: start;
-            align-items: flex-start;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
     margin-bottom: 0.8rem;
     font-size: 0.8rem;
   }
   .orderList .orderDetails .prodQty .prod {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-pack: start;
-        -ms-flex-pack: start;
-            justify-content: flex-start;
-    -webkit-box-align: start;
-        -ms-flex-align: start;
-            align-items: flex-start;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
     width: 80%;
   }
   .orderList .orderDetails .prodQty .prod div {
     width: 50%;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    -ms-flex-pack: distribute;
-        justify-content: space-around;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
   }
   .orderList .orderDetails .prodQty .prod div button {
     width: 1.5rem;
@@ -457,17 +299,15 @@
     margin-bottom: 0.3rem;
   }
 }
-
 * {
   margin: 0;
   padding: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
   background-color: #f5f1ef;
-  font-family: 'Lato', sans-serif;
+  font-family: "Lato", sans-serif;
 }
 
 h3 {
@@ -482,4 +322,8 @@ a {
   text-decoration: none;
   color: #000000;
 }
-/*# sourceMappingURL=style.css.map */
+
+.is-active {
+  background-color: darkcyan;
+  color: aliceblue;
+}/*# sourceMappingURL=style.css.map */

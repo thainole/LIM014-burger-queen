@@ -18,6 +18,12 @@ export const OrderSummary = ({ handleRemove, handleQty, state, setState, initial
     await setState(initialValues);
   }
 
+  // const question = React.createElement(
+  //   'div',
+  //   { className: 'containerQuestion'},
+  //   '¿Estás seguro de querer eliminar?'
+  // );
+
   const handleSubmit = (e) => {
     e.preventDefault();
     dataStore(state);

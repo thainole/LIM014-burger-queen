@@ -1,23 +1,12 @@
 import { db } from './config'
 
-/*
-  Esto funciona pero aún no es necesario usarlo :D 
-
-  const duration = (anteriorTime) => {
-    const a = orderTime().split(':');
-    const b = anteriorTime.split(':');
-    const aParse = parseInt(a[0])*60 + parseInt(a[1])
-    const bParse = parseInt(b[0])*60 + parseInt(b[1])
-    const difMin = aParse - bParse
-    return `${difMin} minutos` 
-  } 
-
-*/
-const createOrder = (orderData/* , newTotal */) => db.collection('orders').add({
+const createOrder = (orderData) => db.collection('orders').add({
   ...orderData,
   orderNumber: orderData.orderNumber + 1,
-  // totalTime: duration(orderData.timeInit)
-  /* totalPrice: newTotal,  esto no funciona jijiji */
+})
+
+const updateStatusOrder = (idOrder, valueStatus) => db.collection('orders').doc(idOrder).update({
+  status: valueStatus,
 })
 
 const orderTime = () => {
@@ -25,7 +14,6 @@ const orderTime = () => {
   const newTime = new Date().toLocaleTimeString('es-Es', time);
   return `${newTime}`
 }
-// console.log(duration())
 
 const orderDate = () => {
   const date = { month: 'short', day: 'numeric', year: 'numeric' };
@@ -51,5 +39,6 @@ export {
   orderTime,
   orderDate,
   orderDateTime,
+  updateStatusOrder
   // duration
 }
