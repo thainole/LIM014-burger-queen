@@ -8,7 +8,7 @@ export const OrderStatus = () => {
 
   const readAllOrders = () =>
     db
-      .collection("orders")
+      .collection("orders")/* .where("status", "==", "ready") */
       .orderBy("orderDateTime", "desc")
       .onSnapshot((querySnapshot) => {
         const arrOrders = [];
@@ -32,14 +32,14 @@ export const OrderStatus = () => {
         {
           ordersCooked.length > 0
           ? ordersCooked.map((ordercooked)  => (
-            <OrderEachStatus 
+            <OrderEachStatus
               className="chefOrderContainer"
               ordercooked={ordercooked}
               key={ordercooked.id}
             />
           ))
           : null
-        }       
+        }
       </article>
     </section>
   )

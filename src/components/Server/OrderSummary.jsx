@@ -12,7 +12,7 @@ export const OrderSummary = ({ handleRemove, handleQty, state, setState, initial
     const { name, value } = e.target;
     setState({...state, [name] : value})
   };
-  
+
   const dataStore = async(state/* , totalSum */) => {
     await createOrder(state/* , totalSum */);
     await setState(initialValues);
@@ -39,6 +39,7 @@ export const OrderSummary = ({ handleRemove, handleQty, state, setState, initial
           name="client"
           onChange={handleInputChange}
           value={state.client}
+          required
         />
         <p>Mesero: </p>
         <input
@@ -46,6 +47,7 @@ export const OrderSummary = ({ handleRemove, handleQty, state, setState, initial
           name="server"
           onChange={handleInputChange}
           value={state.server}
+          required
         />
         <p># Mesa : </p>
         <input
@@ -55,6 +57,7 @@ export const OrderSummary = ({ handleRemove, handleQty, state, setState, initial
           placeholder="1-9"
           onChange={handleInputChange}
           value={state.table}
+          required
         />
       </section>
       <section className="orderDetails">
