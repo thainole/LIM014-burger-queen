@@ -21,12 +21,21 @@
         @include displayFlex(row, flex-start, flex-start);
       }
       button {
-        @include buttonStyle(1px, transparent, $mainColor, 0.5rem, 0.2rem);
+        @include buttonStyle(1px, transparent, $mainColor, 0.5rem, 0.4rem);
         color: $white;
+        font-size: $small;
         width: 7.5rem;
       }
       .smallerFont {
         font-size: $xsmall;
+      }
+      .is-active{
+        background-color: $mainColor;
+        color: aliceblue;
+      }
+      .inactive{
+        background-color: rgb(85, 84, 84);
+        cursor: not-allowed;
       }
     }
   }

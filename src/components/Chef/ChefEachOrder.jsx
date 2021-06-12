@@ -5,9 +5,9 @@ import { updateStatusOrder  } from '../../firebase/firestore'
 export const ChefEachOrder = ({order}) => {
 
   const mealCooked = (id) => {
-    updateStatusOrder(id, order.status = 'ready')
+    updateStatusOrder(id, order.status = 'ready');
   }///* CAMBIO */
-  
+
   return (
     <aside className="cards">
       <h3>Order #{order.orderNumber}</h3>
@@ -27,7 +27,7 @@ export const ChefEachOrder = ({order}) => {
         </div>
         )): null}
       </div><br />
-      <button /* CAMBIO */onClick={()=> mealCooked(order.orderId)}>Pedido listo</button>
+      <button /* CAMBIO */onClick={()=> mealCooked(order.orderId)}>Orden culminada</button>
     </aside>
   )
 

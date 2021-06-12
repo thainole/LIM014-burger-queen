@@ -1,14 +1,25 @@
 import React from "react";
 
 export const OrderEachStatus = ({ ordercooked }) => {
-  const [activeButton, setActiveButton] = React.useState(false);
+  //const [activeButton, setActiveButton] = React.useState(false);
 
-  const mealToDeliver = (id, status) => {
+  const mealToDeliver = (status) => {
     console.log(status);
+    // if(status==="ready"){
+
+    // }
+    //aca debo agregar 1 fn para que se oculte este card despues que ya esté lista la orden
   };
+  const toggleActiveStyle = (status) => {
+    if(status === "ready"){
+      return "is-active"
+    } else if (status === "pending"){
+      return "inactive"
+    }
+  }
 
   return (
-    <aside className="cards">
+    <aside className="cards" >
       <h3>Order #1234</h3>
       <div className="smallerFont">
         <p>Cliente: {ordercooked.client} </p>
@@ -33,13 +44,16 @@ export const OrderEachStatus = ({ ordercooked }) => {
       </div>
       <br />
       <button
-        onClick={() => mealToDeliver(ordercooked.orderId, ordercooked.status)}
-        disable={
-          true
-          /* ordercooked.status === "pending" ? activeButton : !activeButton */
-        }
+        className={ toggleActiveStyle(ordercooked.status) }
+        onClick={() => mealToDeliver(ordercooked.status)}
+        disabled={
+          /* ordercooked.status === "ready" ? activeButton : !activeButton */
+          ordercooked.status === "pending" ? false : true
+      }
       >
-        Orden Lista para entregar al cliente
+        {
+         ordercooked.status === "pending" ? 'Preparando orden' : 'Orden Lista para entregar al cliente'
+        }
       </button>
     </aside>
   );

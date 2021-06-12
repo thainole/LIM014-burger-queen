@@ -122,12 +122,21 @@
     background-color: #ff8508;
     border-radius: 0.5rem;
     cursor: pointer;
-    padding: 0.2rem;
+    padding: 0.4rem;
     color: #ffff;
+    font-size: 0.9rem;
     width: 7.5rem;
   }
   .statusCard .cards .smallerFont {
     font-size: 0.8rem;
+  }
+  .statusCard .cards .is-active {
+    background-color: #ff8508;
+    color: aliceblue;
+  }
+  .statusCard .cards .inactive {
+    background-color: #555454;
+    cursor: not-allowed;
   }
 }
 @media screen and (min-width: 768px) {
@@ -321,9 +330,4 @@ ul {
 a {
   text-decoration: none;
   color: #000000;
-}
-
-.is-active {
-  background-color: darkcyan;
-  color: aliceblue;
 }/*# sourceMappingURL=style.css.map */
