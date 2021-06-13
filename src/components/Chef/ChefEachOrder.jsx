@@ -1,5 +1,4 @@
 import React from 'react'
-//import { duration } from '../../firebase/firestore'
 import { updateStatusOrder, updateTimeDateEnd } from '../../firebase/firestore'
 
 export const ChefEachOrder = ({order}) => {

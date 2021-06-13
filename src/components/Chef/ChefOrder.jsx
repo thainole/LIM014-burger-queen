@@ -1,5 +1,4 @@
 import React from "react";
-// import { db } from "../../firebase/config";
 import { readAllOrders } from '../../firebase/firestore'
 import { ChefEachOrder } from "./ChefEachOrder";
 import { ChefNavBar } from "./ChefNavBar";
