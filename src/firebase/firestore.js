@@ -32,10 +32,23 @@ const orderDateTime = () => {
   return parseInt(`${year}${month}${day}${hour}${minute}${second}`, 0);
 };
 
+const readAllOrders = (cb) => db.collection("orders")
+  .orderBy("orderDateTime", "desc")
+  .onSnapshot((querySnapshot) => {
+    const arrOrders = [];
+    querySnapshot.docs.forEach((doc) =>
+      arrOrders.push({
+        orderId: doc.id,
+        ...doc.data(),
+      })
+    );
+    cb(arrOrders);
+  });
 // aquí iba lo del onSnapchot pero no sé cómo lo ponemos xd
 
 export {
   createOrder,
+  readAllOrders,
   orderTime,
   orderDate,
   orderDateTime,

@@ -1,28 +1,13 @@
 import React from 'react'
 import { NavBar } from './NavBar';
 import { OrderEachStatus } from './OrderEachStatus';
-import { db } from "../../firebase/config";
+import { readAllOrders } from '../../firebase/firestore'
 
 export const OrderStatus = () => {
   const [ordersCooked, setOrdersCooked] = React.useState([]);
 
-  const readAllOrders = () =>
-    db
-      .collection("orders")/* .where("status", "==", "ready") */
-      .orderBy("orderDateTime", "desc")
-      .onSnapshot((querySnapshot) => {
-        const arrOrders = [];
-        querySnapshot.docs.forEach((doc) =>
-          arrOrders.push({
-            orderId: doc.id,
-            ...doc.data(),
-          })
-        );
-        setOrdersCooked(arrOrders);
-      });
-
   React.useEffect(() => {
-    readAllOrders();
+    readAllOrders(setOrdersCooked);
   }, []);
 
   return (
@@ -33,7 +18,6 @@ export const OrderStatus = () => {
           ordersCooked.length > 0
           ? ordersCooked.map((ordercooked)  => (
             <OrderEachStatus
-              className="chefOrderContainer"
               ordercooked={ordercooked}
               key={ordercooked.id}
             />

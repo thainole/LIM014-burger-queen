@@ -9,32 +9,37 @@
     .cards{
       font-size: $small;
       @include buttonStyle(1px, $mainColor, $white, 0.5rem, 0.8rem);
-      @include displayFlex(column, flex-start, flex-start);
+      @include displayFlex(column, space-between, flex-start);
       margin: 0.7rem;
       width: 13.5rem;
       cursor: auto;
+      section {
+        width: 100%;
+      }
       h3, button {
         align-self: center;
         margin: 0.5rem;
+        text-align: center;
       }
       .onlyrow {
         @include displayFlex(row, flex-start, flex-start);
       }
+
       button {
-        @include buttonStyle(1px, transparent, $mainColor, 0.5rem, 0.4rem);
+        @include buttonStyle(1px, transparent, $mainColor, 0.5rem, 0.3rem);
         color: $white;
         font-size: $small;
-        width: 7.5rem;
+        width: 8.5rem;
       }
       .smallerFont {
         font-size: $xsmall;
       }
       .is-active{
         background-color: $mainColor;
-        color: aliceblue;
+        color: $white;
       }
       .inactive{
-        background-color: rgb(85, 84, 84);
+        background-color: $darkGrey;
         cursor: not-allowed;
       }
     }
