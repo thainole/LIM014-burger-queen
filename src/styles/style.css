@@ -167,9 +167,9 @@
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    -webkit-box-pack: start;
-        -ms-flex-pack: start;
-            justify-content: flex-start;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
     -webkit-box-align: start;
         -ms-flex-align: start;
             align-items: flex-start;
@@ -177,11 +177,15 @@
     width: 13.5rem;
     cursor: auto;
   }
+  .statusCard .cards section {
+    width: 100%;
+  }
   .statusCard .cards h3, .statusCard .cards button {
     -ms-flex-item-align: center;
         -ms-grid-row-align: center;
         align-self: center;
     margin: 0.5rem;
+    text-align: center;
   }
   .statusCard .cards .onlyrow {
     display: -webkit-box;
@@ -203,12 +207,21 @@
     background-color: #ff8508;
     border-radius: 0.5rem;
     cursor: pointer;
-    padding: 0.2rem;
+    padding: 0.3rem;
     color: #ffff;
-    width: 7.5rem;
+    font-size: 0.9rem;
+    width: 8.5rem;
   }
   .statusCard .cards .smallerFont {
     font-size: 0.8rem;
+  }
+  .statusCard .cards .is-active {
+    background-color: #ff8508;
+    color: #ffff;
+  }
+  .statusCard .cards .inactive {
+    background-color: #666666;
+    cursor: not-allowed;
   }
 }
 

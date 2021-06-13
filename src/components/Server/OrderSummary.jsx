@@ -3,18 +3,19 @@ import { OrderSummaryProd } from "./OrderSummaryProd";
 import { createOrder } from '../../firebase/firestore'
 
 export const OrderSummary = ({ handleRemove, handleQty, state, setState, initialValues }) => {
-
+  
   const totalSum = (products) => {
     const total = products.reduce((acc, item) => acc + item.price * item.amount, 0);
     return total
   }
+  
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setState({...state, [name] : value})
   };
-  
-  const dataStore = async(state/* , totalSum */) => {
-    await createOrder(state/* , totalSum */);
+
+  const dataStore = async(state, totalSum) => {
+    await createOrder(state, totalSum);
     await setState(initialValues);
   }
 
@@ -33,6 +34,7 @@ export const OrderSummary = ({ handleRemove, handleQty, state, setState, initial
           name="client"
           onChange={handleInputChange}
           value={state.client}
+          required
         />
         <p>Mesero: </p>
         <input
@@ -40,6 +42,7 @@ export const OrderSummary = ({ handleRemove, handleQty, state, setState, initial
           name="server"
           onChange={handleInputChange}
           value={state.server}
+          required
         />
         <p># Mesa : </p>
         <input
@@ -49,6 +52,7 @@ export const OrderSummary = ({ handleRemove, handleQty, state, setState, initial
           placeholder="1-9"
           onChange={handleInputChange}
           value={state.table}
+          required
         />
       </section>
       <section className="orderDetails">
@@ -66,8 +70,16 @@ export const OrderSummary = ({ handleRemove, handleQty, state, setState, initial
             />
           ))}
           <h3>Total:&nbsp;&nbsp;&nbsp;S/. {totalSum(state.products)}</h3>
+          {/* {
+            state.products > 0 ? 
+            <h3>Total:&nbsp;&nbsp;&nbsp;S/. {totalSum(state.products)}</h3>
+            : 
+            <p>No has agregado ningún producto :(</p>
+          } */}
+          
         </aside>
       </section>
+      
       <button className="submitButton" >
         Enviar a cocina
       </button>

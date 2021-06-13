@@ -28,7 +28,6 @@ export const Order = () => {
     setState((prev) => ({...prev, products: [...prev.products, product]}))
   }
 
-
   const handleQty = (id, sign) => {
     // eslint-disable-next-line array-callback-return
     const filtering = state.products.map((item) => {
