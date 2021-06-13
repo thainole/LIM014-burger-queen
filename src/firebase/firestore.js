@@ -5,6 +5,19 @@ const createOrder = (orderData) => db.collection('orders').add({
   orderNumber: orderData.orderNumber + 1,
 })
 
+const readAllOrders = (cb) => db.collection("orders")
+  .orderBy("orderDateTime", "desc")
+  .onSnapshot((querySnapshot) => {
+    const arrOrders = [];
+    querySnapshot.docs.forEach((doc) =>
+      arrOrders.push({
+        orderId: doc.id,
+        ...doc.data(),
+      })
+    );
+    cb(arrOrders);
+  });
+
 const updateStatusOrder = (idOrder, valueStatus) => db.collection('orders').doc(idOrder).update({
   status: valueStatus,
 })
@@ -32,26 +45,29 @@ const orderDateTime = () => {
   return parseInt(`${year}${month}${day}${hour}${minute}${second}`, 0);
 };
 
-const readAllOrders = (cb) => db.collection("orders")
-  .orderBy("orderDateTime", "desc")
-  .onSnapshot((querySnapshot) => {
-    const arrOrders = [];
-    querySnapshot.docs.forEach((doc) =>
-      arrOrders.push({
-        orderId: doc.id,
-        ...doc.data(),
-      })
-    );
-    cb(arrOrders);
-  });
-// aquí iba lo del onSnapchot pero no sé cómo lo ponemos xd
+const updateTimeDateEnd = (idOrder, initTime) => db.collection('orders').doc(idOrder).update({
+  timeEnd: orderTime(),
+  dateEnd: orderDate(),
+  totalTime: duration(initTime)
+})
+
+const duration = (initTime) => {
+  const a = orderTime().split(':');
+  const b = initTime.split(':');
+  const aParse = parseInt(a[0])*60 + parseInt(a[1])
+  const bParse = parseInt(b[0])*60 + parseInt(b[1])
+  const difMin = aParse - bParse
+  return `${difMin} minuto(s)` 
+}
+
 
 export {
   createOrder,
   readAllOrders,
   orderTime,
   orderDate,
+  updateTimeDateEnd,
+  duration,
   orderDateTime,
   updateStatusOrder
-  // duration
 }

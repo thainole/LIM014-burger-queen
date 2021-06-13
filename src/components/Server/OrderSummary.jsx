@@ -3,26 +3,21 @@ import { OrderSummaryProd } from "./OrderSummaryProd";
 import { createOrder } from '../../firebase/firestore'
 
 export const OrderSummary = ({ handleRemove, handleQty, state, setState, initialValues }) => {
-
+  
   const totalSum = (products) => {
     const total = products.reduce((acc, item) => acc + item.price * item.amount, 0);
     return total
   }
+
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setState({...state, [name] : value})
   };
 
-  const dataStore = async(state/* , totalSum */) => {
-    await createOrder(state/* , totalSum */);
+  const dataStore = async(state, totalSum) => {
+    await createOrder(state, totalSum);
     await setState(initialValues);
   }
-
-  // const question = React.createElement(
-  //   'div',
-  //   { className: 'containerQuestion'},
-  //   '¿Estás seguro de querer eliminar?'
-  // );
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -75,8 +70,16 @@ export const OrderSummary = ({ handleRemove, handleQty, state, setState, initial
             />
           ))}
           <h3>Total:&nbsp;&nbsp;&nbsp;S/. {totalSum(state.products)}</h3>
+          {/* {
+            state.products > 0 ? 
+            <h3>Total:&nbsp;&nbsp;&nbsp;S/. {totalSum(state.products)}</h3>
+            : 
+            <p>No has agregado ningún producto :(</p>
+          } */}
+          
         </aside>
       </section>
+      
       <button className="submitButton" >
         Enviar a cocina
       </button>

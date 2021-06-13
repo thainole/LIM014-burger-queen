@@ -1,11 +1,13 @@
 import React from 'react'
 //import { duration } from '../../firebase/firestore'
-import { updateStatusOrder  } from '../../firebase/firestore'
+import { updateStatusOrder, updateTimeDateEnd } from '../../firebase/firestore'
 
 export const ChefEachOrder = ({order}) => {
 
   const mealCooked = (id) => {
     updateStatusOrder(id, order.status = 'ready');
+    updateTimeDateEnd(id, order.timeInit)
+
   }///* CAMBIO 1*/
 
   return (
