@@ -1,30 +1,44 @@
 import React from 'react'
 
-export const CardsHistory = () => {
+export const CardsHistory = ({orderH}) => {
   return (
-    <section className="statusCard">
-        <aside className="cards">
-          <h3>Orden #1234</h3>
-          <div className="smallerFont">
-            <p><b>Mesero: </b>Thais (mesa 6)</p>
-            <p><b>Cliente: </b>Taylor Swift</p>
-          </div>
+    <>
+    {
+      (orderH.status === "delivered") ? 
+      <aside className="cards">
+        <h3>Orden {orderH.orderNumber}</h3>
+        <div className="smallerFont">
+          <p><b>Cliente: </b>{orderH.client}</p>
+          <p><b>Mesero: </b>{orderH.server} (Mesa #{orderH.table})</p>
+        </div>
+        <br />
+        <div>
+          {orderH.products
+            ? orderH.products.map((prod) => (
+              <div className="onlyrow spc-btwn">
+                <div className="onlyrow">
+                  <p>
+                    <strong>{prod.amount}&nbsp;&nbsp;</strong>
+                  </p>
+                  <p>{prod.name}</p>
+                </div>
+                <p className="p">S/.{prod.price*prod.amount}</p>
+              </div>  
+              ))
+            : null
+          }
+        </div>
+        <div className="smallerFont">
           <br />
-          <div className="onlyrow">
-            <div className="onlyrow">
-              <p>1&nbsp;&nbsp;</p>
-              <p>Hamburguesa simple de carne con huevo</p>
-            </div>
-            <p className="p">S/.15</p>
-          </div>
-          <div className="smallerFont">
-            <br />
-            <p>Hora del pedido:</p>
-            <p>Hora de terminado:</p>
-            <p>Tiempo de duración:</p>
-          </div>
-          
-        </aside>
-      </section>
+          <p>Inicio: {orderH.dateInit} {orderH.timeInit}</p>
+          <p>Fin: {orderH.dateEnd} {orderH.timeEnd}</p>
+          <p>Duración: {orderH.totalTime}</p>
+        </div>
+      </aside>
+      : 
+        null
+    }
+      
+    </>
   )
 }

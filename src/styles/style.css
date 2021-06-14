@@ -201,6 +201,18 @@
     -webkit-box-align: start;
         -ms-flex-align: start;
             align-items: flex-start;
+    width: 100%;
+  }
+  .statusCard .cards .spc-btwn {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .statusCard .cards div {
+    width: 100%;
   }
   .statusCard .cards button {
     border: solid 1px transparent;
