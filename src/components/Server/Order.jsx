@@ -7,7 +7,6 @@ import { orderTime, orderDate, orderDateTime } from '../../firebase/firestore'
 export const Order = () => {
   
   const initialValues = {
-    orderNumber: 0,
     client: "",
     server: "",
     table: "",

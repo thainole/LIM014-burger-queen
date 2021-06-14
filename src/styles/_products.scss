@@ -1,6 +1,6 @@
 @import "./global";
 
-@media screen and (min-width: 768px)/*  and (max-width: 1024px) */ /* and (orientation: landscape) */{
+@media screen and (min-width: 768px) {
   .productsList {
     width: 60vw;
     border-right: solid 1px $darkGrey;
@@ -28,7 +28,6 @@
         text-align: center;
         @include buttonStyle(1px, transparent, $white, 0.5rem, 0.4rem);
         cursor: auto;
-        /* margin-inline: 0.7rem; */
         margin: 0.5rem;
         width: 8.5rem;
         height: 12rem;

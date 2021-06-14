@@ -6,9 +6,11 @@ import { ChefNavBar } from "./ChefNavBar";
 export const ChefOrder = () => {
   const [orders, setOrders] = React.useState([]);
 
+  const callback = (data) => setOrders(data)
+
   React.useEffect(() => {
-    readAllOrders(setOrders);
-  }, []);
+    readAllOrders(callback);
+  }, [orders]);
 
   return (
     <section>
@@ -18,7 +20,7 @@ export const ChefOrder = () => {
           ? orders.map((order) => (
               <ChefEachOrder
                 order={order}
-                key={order.id}
+               key={order.orderId}
               />
             ))
           : null
