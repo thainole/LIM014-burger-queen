@@ -10,7 +10,7 @@ export const OrderHistory = () => {
   const callback = (data) => setOrdersH(data)
 
   React.useEffect(() => {
-    readAllOrders(callback);
+    readAllOrders(callback, 'desc');
   }, [ordersH]);
 
   return (

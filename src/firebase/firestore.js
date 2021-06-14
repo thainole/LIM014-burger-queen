@@ -5,8 +5,8 @@ const createOrder = (orderData) => db.collection('orders').add({
   orderNumber: orderData.orderNumber + 1,
 })
 
-const readAllOrders = (cb) => db.collection("orders")
-  .orderBy("orderDateTime", "desc")
+const readAllOrders = (cb, order) => db.collection("orders")
+  .orderBy("orderDateTime", order)
   .onSnapshot((querySnapshot) => {
     const arrOrders = [];
     querySnapshot.docs.forEach((doc) =>

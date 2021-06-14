@@ -9,7 +9,7 @@ export const ChefOrder = () => {
   const callback = (data) => setOrders(data)
 
   React.useEffect(() => {
-    readAllOrders(callback);
+    readAllOrders(callback, 'asc');
   }, [orders]);
 
   return (

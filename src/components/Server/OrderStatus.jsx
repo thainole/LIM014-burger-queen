@@ -9,7 +9,7 @@ export const OrderStatus = () => {
   const callback = (data) => setOrdersCooked(data)
 
   React.useEffect(() => {
-    readAllOrders(callback);
+    readAllOrders(callback, 'asc');
   }, [ordersCooked]);
 
   return (
