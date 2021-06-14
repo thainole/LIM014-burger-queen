@@ -23,6 +23,14 @@
       }
       .onlyrow {
         @include displayFlex(row, flex-start, flex-start);
+        width: 100%;
+      }
+      .spc-btwn {
+        display: flex;
+        justify-content: space-between;
+      }
+      div{
+        width: 100%
       }
 
       button {
