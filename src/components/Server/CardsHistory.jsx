@@ -34,8 +34,7 @@ export const CardsHistory = ({orderH}) => {
         <br />
         <h4><b>Total: &nbsp;&nbsp;S/. {orderH.totalPrice}</b></h4>
       </aside>
-      : 
-        null
+      : null
     }
     </>
   )
