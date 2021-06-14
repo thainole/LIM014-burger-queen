@@ -7,17 +7,11 @@ export const ChefHistory = () => {
 
   const [ordersH, setOrdersH] = React.useState([]);
 
-<<<<<<< HEAD
   const callback = (data) => setOrdersH(data)
 
   React.useEffect(() => {
     readAllOrders(callback);
   }, [ordersH]);
-=======
-  React.useEffect(() => {
-    readAllOrders(setOrdersH);
-  }, []);
->>>>>>> e50d617 (feat orders history chef and server)
 
   return (
     <section>
@@ -27,11 +21,7 @@ export const ChefHistory = () => {
           ? ordersH.map((orderH) => (
               <CardsHistory
                 orderH={orderH}
-<<<<<<< HEAD
                 key={orderH.orderId}
-=======
-                key={orderH.id}
->>>>>>> e50d617 (feat orders history chef and server)
               />
             ))
           : null
