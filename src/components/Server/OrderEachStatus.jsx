@@ -12,7 +12,6 @@ export const OrderEachStatus = ({ ordercooked }) => {
   }
 
   const mealToDeliver = (id, status) => {
-    console.log(id, status);
     updateStatusOrder(id, ordercooked.status = 'delivered');
   };
 
