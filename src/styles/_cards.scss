@@ -16,10 +16,6 @@
       section {
         width: 100%;
       }
-      /* h4{
-        width: 100%;
-        text-align: end;
-      } */
       .izq {
         text-align: left;
       }
@@ -43,20 +39,15 @@
         display: flex;
         justify-content: space-between;
       }
-      
       div{
         width: 100%
       }
-
       button {
         @include buttonStyle(1px, transparent, $mainColor, 0.5rem, 0.3rem);
         color: $white;
         font-size: $small;
         width: 8.5rem;
       }
-      /* .smallerFont {
-        font-size: $xsmall;
-      } */
       .is-active{
         background-color: $mainColor;
         color: $white;

@@ -8,7 +8,7 @@ export const CardsHistory = ({orderH}) => {
       <aside className="cards" >
         <section>
           <h3>Mesa #{orderH.table}</h3>
-          <div /* className="smallerFont" */>
+          <div>
             <p><b>Cliente: </b>{orderH.client}</p>
             <p><b>Mesero: </b>{orderH.server}</p>
             <p><b>Inicio:</b> {orderH.dateInit} {orderH.timeInit}</p>
@@ -34,10 +34,8 @@ export const CardsHistory = ({orderH}) => {
         <br />
         <h4><b>Total: &nbsp;&nbsp;S/. {orderH.totalPrice}</b></h4>
       </aside>
-      : 
-        null
+      : null
     }
-      
     </>
   )
 }
