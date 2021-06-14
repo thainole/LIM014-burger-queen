@@ -37,14 +37,31 @@
     }
 
     .submitButton{
-      @include buttonStyle(1px, $mainColor, $mainColor, 0.5rem, 0.4rem);
+      @include buttonStyle(1px, $mainColor, $mainColor, 0.5rem, 0.3rem);
       color: $white;
       font-size: $small;
-      width: 45%;
-      margin: 2rem 28%;
+      width: 7.5rem;
+      margin: 0.3rem;
       align-self: flex-end;
+      
     }
-
+    .h3 {
+      text-align:end ;
+    }
+    h5 {
+      font-size: $small;
+      font-weight: 100;
+      text-align: center;
+    }
+    .grey {
+      background-color: $grey;
+      color: $black;
+      border: 1px solid $grey;
+    }
+    div {
+      display: flex;
+      flex-direction: row;
+    }
     .orderDetails {
       margin-top: 0.4rem;
       h4 {

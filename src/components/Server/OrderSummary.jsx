@@ -69,20 +69,34 @@ export const OrderSummary = ({ handleRemove, handleQty, state, setState, initial
               handleRemove={handleRemove}
             />
           ))}
-          <h3>Total:&nbsp;&nbsp;&nbsp;S/. {totalSum(state.products)}</h3>
-          {/* {
-            state.products > 0 ? 
-            <h3>Total:&nbsp;&nbsp;&nbsp;S/. {totalSum(state.products)}</h3>
-            : 
-            <p>No has agregado ningún producto :(</p>
-          } */}
+          {
+            state.products.length > 0 ? 
+            <h3 className="h3">Total:&nbsp;&nbsp;&nbsp;S/. {totalSum(state.products)}</h3>
+            : <h5>No has agregado ningún producto :(</h5>
+          } 
           
         </aside>
       </section>
+      <div>
+        {
+           state.products.length > 0 ?
+           <>
+            <button className="submitButton grey" 
+              onClick={e=> {
+                e.preventDefault()
+                setState(initialValues)
+              }}>
+              Borrar orden
+            </button>
+            <button className="submitButton" >
+              Enviar a cocina
+            </button>
+          </>
+         : ''
+        }
+        
+      </div>
       
-      <button className="submitButton" >
-        Enviar a cocina
-      </button>
     </form>
   );
 };
