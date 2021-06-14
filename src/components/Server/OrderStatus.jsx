@@ -6,9 +6,11 @@ import { readAllOrders } from '../../firebase/firestore'
 export const OrderStatus = () => {
   const [ordersCooked, setOrdersCooked] = React.useState([]);
 
+  const callback = (data) => setOrdersCooked(data)
+
   React.useEffect(() => {
-    readAllOrders(setOrdersCooked);
-  }, []);
+    readAllOrders(callback);
+  }, [ordersCooked]);
 
   return (
     <section>
@@ -19,7 +21,7 @@ export const OrderStatus = () => {
           ? ordersCooked.map((ordercooked)  => (
             <OrderEachStatus
               ordercooked={ordercooked}
-              key={ordercooked.id}
+              key={ordercooked.orderId}
             />
           ))
           : null

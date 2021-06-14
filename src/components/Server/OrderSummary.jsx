@@ -14,13 +14,14 @@ export const OrderSummary = ({ handleRemove, handleQty, state, setState, initial
     setState({...state, [name] : value})
   };
 
-  const dataStore = async(state, totalSum) => {
-    await createOrder(state, totalSum);
+  const dataStore = async(state) => {
+    await createOrder(state);
     await setState(initialValues);
   }
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    state.totalPrice = totalSum(state.products)
     dataStore(state);
   };
 

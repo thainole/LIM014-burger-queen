@@ -7,9 +7,11 @@ export const ChefHistory = () => {
 
   const [ordersH, setOrdersH] = React.useState([]);
 
+  const callback = (data) => setOrdersH(data)
+
   React.useEffect(() => {
-    readAllOrders(setOrdersH);
-  }, []);
+    readAllOrders(callback);
+  }, [ordersH]);
 
   return (
     <section>
@@ -19,7 +21,7 @@ export const ChefHistory = () => {
           ? ordersH.map((orderH) => (
               <CardsHistory
                 orderH={orderH}
-                key={orderH.id}
+                key={orderH.orderId}
               />
             ))
           : null

@@ -7,7 +7,7 @@
     display: flex;
     flex-wrap: wrap;
     .cards{
-      font-size: $small;
+      font-size: $xsmall;
       @include buttonStyle(1px, $mainColor, $white, 0.5rem, 0.8rem);
       @include displayFlex(column, space-between, flex-start);
       margin: 0.7rem;
@@ -15,6 +15,16 @@
       cursor: auto;
       section {
         width: 100%;
+      }
+      .izq {
+        text-align: left;
+      }
+      .center {
+        text-align: center;
+      }
+      hr {
+        border-top: 1px dashed $darkGrey;
+        margin: 0.9rem 0;
       }
       h3, button {
         align-self: center;
@@ -32,22 +42,19 @@
       div{
         width: 100%
       }
-
       button {
         @include buttonStyle(1px, transparent, $mainColor, 0.5rem, 0.3rem);
         color: $white;
         font-size: $small;
         width: 8.5rem;
       }
-      .smallerFont {
-        font-size: $xsmall;
-      }
       .is-active{
         background-color: $mainColor;
         color: $white;
       }
       .inactive{
-        background-color: $darkGrey;
+        background-color: $grey;
+        color: $black;
         cursor: not-allowed;
       }
     }

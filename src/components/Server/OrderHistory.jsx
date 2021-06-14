@@ -7,9 +7,11 @@ export const OrderHistory = () => {
 
   const [ordersH, setOrdersH] = React.useState([]);
 
+  const callback = (data) => setOrdersH(data)
+
   React.useEffect(() => {
-    readAllOrders(setOrdersH);
-  }, []);
+    readAllOrders(callback);
+  }, [ordersH]);
 
   return (
     <section>

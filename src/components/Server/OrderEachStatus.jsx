@@ -12,7 +12,6 @@ export const OrderEachStatus = ({ ordercooked }) => {
   }
 
   const mealToDeliver = (id, status) => {
-    console.log(id, status);
     updateStatusOrder(id, ordercooked.status = 'delivered');
   };
 
@@ -20,26 +19,21 @@ export const OrderEachStatus = ({ ordercooked }) => {
     <>
       {
         (ordercooked.status === "pending" || ordercooked.status === "ready") ?
-        <aside className="cards" >
+        <aside className="cards">
           <section>
-            <h3>Order #{ordercooked.orderNumber}</h3>
+            <h3>Mesa #{ordercooked.table}</h3>
             <div className="smallerFont">
-              <p>Cliente: {ordercooked.client} </p>
-              <p>
-                Mesero: {ordercooked.server} (Mesa #{ordercooked.table})
-              </p>
-              <p>Fecha: {ordercooked.dateInit}</p>
-              <p>Hora: {ordercooked.timeInit}</p>
+              <p><b>Cliente: </b>{ordercooked.client}</p>
+              <p><b>Mesero: </b>{ordercooked.server}</p>
+              <p><b>Fecha: </b>{ordercooked.dateInit}</p>
+              <p><b>Hora: </b>{ordercooked.timeInit}</p>
+              <hr />
             </div>
-            <br />
-
             <div>
               {ordercooked.products
                 ? ordercooked.products.map((prod) => (
                     <div className="onlyrow">
-                      <p>
-                        <strong>{prod.amount}&nbsp;&nbsp;</strong>
-                      </p>
+                      <p>{prod.amount}&nbsp;&nbsp;</p>
                       <p>{prod.name}</p>
                     </div>
                   ))
@@ -47,17 +41,23 @@ export const OrderEachStatus = ({ ordercooked }) => {
             </div>
             <br />
           </section>
-          <button
-            className={ toggleActiveStyle(ordercooked.status) }
-            onClick={() => mealToDeliver(ordercooked.orderId, ordercooked.status)}
-            disabled={
-              ordercooked.status === "pending" ? true : false
-            }
-          >
-            {
-            ordercooked.status === "pending" ? 'Preparando orden' : 'Entregar orden'
-            }
-          </button>
+         
+          <section className="center">
+            <h4 className="izq"><b>Total: &nbsp;&nbsp;S/. {ordercooked.totalPrice}</b></h4>
+            <br />
+            <button
+              className={ toggleActiveStyle(ordercooked.status) }
+              onClick={() => mealToDeliver(ordercooked.orderId, ordercooked.status)}
+              disabled={
+                ordercooked.status === "pending" ? true : false
+              }
+            >
+              {
+              ordercooked.status === "pending" ? 'Preparando orden' : 'Entregar orden'
+              }
+            </button>
+          </section>
+          
           
         </aside>
         : null

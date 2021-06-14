@@ -53,7 +53,6 @@ export const ProductsContainer = ({ chosenProduct, state, handleQty }) => {
               key={product.id} 
               state={state} 
               handleQty={handleQty}/>
-            // Hemos pasado cada card como 1 componente aislado para que cda 1 tenga su propio evento(ejem: choosen)
           ))}
         </ul>
       </article>
